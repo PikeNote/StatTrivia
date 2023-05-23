@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="1_m587t"]
 [ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_oac58"]
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="4_d7aq7"]
-[ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="5_mian7"]
 [ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="6_gus8j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxnxm"]
 
 [node name="CategoryCreation" type="Node2D"]
 script = ExtResource("1_8oulb")
@@ -25,8 +26,10 @@ offset_left = 803.0
 offset_top = 518.0
 offset_right = 1645.0
 offset_bottom = 700.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-text = "dasdasdsa"
+placeholder_text = "Input quesiton here"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 offset_left = 820.0
@@ -40,44 +43,85 @@ custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
+[node name="LineEdit" type="LineEdit" parent="GridContainer/Button1"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 393.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
+placeholder_text = "Enter option"
+alignment = 1
+
 [node name="Button2" type="TextureRect" parent="GridContainer"]
 custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
+
+[node name="LineEdit" type="LineEdit" parent="GridContainer/Button2"]
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 393.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
+placeholder_text = "Enter option"
+alignment = 1
 
 [node name="Button3" type="TextureRect" parent="GridContainer"]
 custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
+[node name="LineEdit" type="LineEdit" parent="GridContainer/Button3"]
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 393.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
+placeholder_text = "Enter option"
+alignment = 1
+
 [node name="Button4" type="TextureRect" parent="GridContainer"]
 custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
-[node name="ColorRect" type="TextureRect" parent="."]
-offset_left = 806.0
-offset_top = 272.0
-offset_right = 1646.0
-offset_bottom = 477.0
-expand_mode = 1
-stretch_mode = 3
+[node name="LineEdit" type="LineEdit" parent="GridContainer/Button4"]
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 393.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
+placeholder_text = "Enter option"
+alignment = 1
 
-[node name="Border" type="TextureRect" parent="."]
-offset_left = 773.0
-offset_top = 244.0
-offset_right = 1694.0
-offset_bottom = 500.0
-texture = ExtResource("5_mian7")
-expand_mode = 1
+[node name="ImageRect" type="TextureButton" parent="."]
+offset_left = 718.0
+offset_top = 256.0
+offset_right = 1722.0
+offset_bottom = 506.0
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="TextureRect" type="TextureButton" parent="."]
-offset_left = 1170.0
-offset_top = 324.0
-offset_right = 1272.0
-offset_bottom = 424.0
-texture_normal = ExtResource("6_gus8j")
-stretch_mode = 0
+[node name="TextureRect" type="TextureRect" parent="ImageRect"]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 72.0
+offset_right = 565.0
+offset_bottom = 172.0
+texture = ExtResource("6_gus8j")
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
@@ -88,4 +132,12 @@ file_mode = 0
 access = 2
 filters = PackedStringArray("*.png, *.jpg, *.jpeg ; Supported Images")
 
-[connection signal="pressed" from="TextureRect" to="." method="_on_texture_rect_pressed"]
+[node name="Button" type="Button" parent="."]
+offset_left = 444.0
+offset_top = 269.0
+offset_right = 524.0
+offset_bottom = 356.0
+
+[connection signal="pressed" from="ImageRect" to="." method="_on_image_rect_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

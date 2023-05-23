@@ -52,6 +52,7 @@ texture_normal = ExtResource("2_rmylb")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="VFlowContainer/TextureButton2"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
 offset_right = 578.0
@@ -69,6 +70,7 @@ texture_normal = ExtResource("2_rmylb")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="VFlowContainer/TextureButton3"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
 offset_right = 578.0
@@ -86,6 +88,7 @@ texture_normal = ExtResource("2_rmylb")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="VFlowContainer/TextureButton4"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
 offset_right = 578.0
