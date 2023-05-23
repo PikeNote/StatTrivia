@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://cydro44y8ymyk"]
+
+[ext_resource type="Script" path="res://QuestionCreator/CategoryCreation.gd" id="1_8oulb"]
+[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="1_m587t"]
+[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_oac58"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="4_d7aq7"]
+[ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="5_mian7"]
+[ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="6_gus8j"]
+
+[node name="CategoryCreation" type="Node2D"]
+script = ExtResource("1_8oulb")
+
+[node name="Panel2" type="Sprite2D" parent="."]
+position = Vector2(334, 543)
+scale = Vector2(1.21998, 1.31949)
+texture = ExtResource("1_m587t")
+
+[node name="Panel8" type="Sprite2D" parent="."]
+position = Vector2(1231, 544)
+scale = Vector2(1.04422, 1.27589)
+texture = ExtResource("2_oac58")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 803.0
+offset_top = 518.0
+offset_right = 1645.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 30
+text = "dasdasdsa"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 820.0
+offset_top = 705.0
+offset_right = 1634.0
+offset_bottom = 929.0
+columns = 2
+
+[node name="Button1" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 110)
+layout_mode = 2
+texture = ExtResource("4_d7aq7")
+
+[node name="Button2" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 110)
+layout_mode = 2
+texture = ExtResource("4_d7aq7")
+
+[node name="Button3" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 110)
+layout_mode = 2
+texture = ExtResource("4_d7aq7")
+
+[node name="Button4" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(200, 110)
+layout_mode = 2
+texture = ExtResource("4_d7aq7")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+offset_left = 806.0
+offset_top = 272.0
+offset_right = 1646.0
+offset_bottom = 477.0
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Border" type="TextureRect" parent="."]
+offset_left = 773.0
+offset_top = 244.0
+offset_right = 1694.0
+offset_bottom = 500.0
+texture = ExtResource("5_mian7")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureButton" parent="."]
+offset_left = 1170.0
+offset_top = 324.0
+offset_right = 1272.0
+offset_bottom = 424.0
+texture_normal = ExtResource("6_gus8j")
+stretch_mode = 0
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+position = Vector2i(367, 142)
+size = Vector2i(1226, 776)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png, *.jpg, *.jpeg ; Supported Images")
+
+[connection signal="pressed" from="TextureRect" to="." method="_on_texture_rect_pressed"]
