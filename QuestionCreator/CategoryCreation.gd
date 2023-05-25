@@ -52,5 +52,7 @@ func _on_button_pressed():
 	DisplayServer.clipboard_set(JSON.stringify(data));
 	pass # Replace with function body.
 
+
+
 func _on_image_rect_pressed():
 	$FileDialog.show();

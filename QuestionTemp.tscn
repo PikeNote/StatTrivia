@@ -1,23 +1,144 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy04j4p55wsa6"]
+[gd_scene load_steps=9 format=3 uid="uid://dy04j4p55wsa6"]
 
-[ext_resource type="Script" path="res://QuestionCreator/CategoryCreation.gd" id="1_jlqxn"]
-[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_4g4ki"]
+[ext_resource type="Script" path="res://QuestionTemp.gd" id="1_3ge0g"]
+[ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="2_66jwl"]
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="3_sojs0"]
 [ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="4_x6ost"]
+[ext_resource type="Texture2D" uid="uid://niqisen1qayq" path="res://assets/Circle_Button.png" id="5_3o0lw"]
 
-[node name="CategoryCreation" type="Node2D"]
-script = ExtResource("1_jlqxn")
+[sub_resource type="Animation" id="Animation_cjcsd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GridContainer/Button1/CorrectWrongColor:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 116)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GridContainer/Button2/CorrectWrongColor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, 11)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GridContainer/Button3/CorrectWrongColor:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(574, 116)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(574, 116)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GridContainer/Button2/CorrectWrongColor:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(574, 116)]
+}
 
-[node name="Panel8" type="Sprite2D" parent="."]
-position = Vector2(956.001, 542.5)
-scale = Vector2(1.51191, 1.57805)
-texture = ExtResource("2_4g4ki")
+[sub_resource type="Animation" id="Animation_qkst8"]
+resource_name = "expandingRect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GridContainer/Button1/CorrectWrongColor:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 116), Vector2(572, 116)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GridContainer/Button3/CorrectWrongColor:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 116), Vector2(574, 116)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 116), Vector2(574, 116)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GridContainer/Button2/CorrectWrongColor:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 116), Vector2(574, 116)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0e650"]
+_data = {
+"RESET": SubResource("Animation_cjcsd"),
+"expandingRect": SubResource("Animation_qkst8")
+}
+
+[node name="Questions" type="Node2D"]
+position = Vector2(4, 4)
+script = ExtResource("1_3ge0g")
+
+[node name="RobBottomLeft" type="Sprite2D" parent="."]
+position = Vector2(954, 534)
+texture = ExtResource("2_66jwl")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-offset_left = 369.0
-offset_top = 718.0
-offset_right = 1573.0
-offset_bottom = 1002.0
+offset_left = 456.0
+offset_top = 742.0
+offset_right = 1660.0
+offset_bottom = 1026.0
 columns = 2
 
 [node name="Button1" type="TextureButton" parent="GridContainer"]
@@ -26,11 +147,55 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
+[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button1"]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 14.0
+offset_bottom = 127.0
+color = Color(0.164706, 1, 0.396078, 0.792157)
+
+[node name="Label" type="Label" parent="GridContainer/Button1"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 20.0
+offset_right = 583.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Placeholder text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="Button2" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
+
+[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button2"]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 588.0
+offset_bottom = 127.0
+color = Color(0.164706, 1, 0.396078, 0.792157)
+
+[node name="Label" type="Label" parent="GridContainer/Button2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 583.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Placeholder text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Button3" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
@@ -38,13 +203,57 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
+[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button3"]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 588.0
+offset_bottom = 127.0
+color = Color(0.164706, 1, 0.396078, 0.792157)
+
+[node name="Label" type="Label" parent="GridContainer/Button3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 583.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Placeholder text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="Button4" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="PictureContainer" type="Control" parent="."]
+[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button4"]
+visible = false
+layout_mode = 0
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 588.0
+offset_bottom = 127.0
+color = Color(0.164706, 1, 0.396078, 0.792157)
+
+[node name="Label" type="Label" parent="GridContainer/Button4"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 583.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Placeholder text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ImageQuestion" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -53,31 +262,68 @@ offset_top = 511.0
 offset_right = 619.0
 offset_bottom = 551.0
 
-[node name="TextEdit" type="Label" parent="PictureContainer"]
-offset_left = -200.0
-offset_right = 986.0
-offset_bottom = 182.0
+[node name="question_text" type="Label" parent="ImageQuestion"]
+layout_mode = 0
+offset_left = -101.0
+offset_top = -54.0
+offset_right = 1072.0
+offset_bottom = 211.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "dasdasdsa"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="Border" type="TextureRect" parent="PictureContainer"]
-offset_left = -365.0
-offset_top = -346.0
-offset_right = 1115.0
-offset_bottom = -11.0
+[node name="image" type="TextureRect" parent="ImageQuestion"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = -459.0
+offset_right = 1053.0
+offset_bottom = -56.0
 texture = ExtResource("4_x6ost")
 expand_mode = 1
+stretch_mode = 5
 
-[node name="TextEdit" type="Label" parent="."]
-offset_left = 377.0
-offset_top = 223.0
-offset_right = 1565.0
-offset_bottom = 596.0
+[node name="question_text" type="Label" parent="."]
+offset_left = 474.0
+offset_top = 107.0
+offset_right = 1648.0
+offset_bottom = 691.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 51
 text = "dasdasdsa"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="QuestionCount" type="TextureRect" parent="."]
+offset_left = 1737.0
+offset_top = 35.0
+offset_right = 1882.0
+offset_bottom = 180.0
+texture = ExtResource("5_3o0lw")
+expand_mode = 5
+
+[node name="QuestionNumber" type="Label" parent="QuestionCount"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 131.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "1/5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0e650")
+}
+
+[connection signal="pressed" from="GridContainer/Button1" to="." method="_on_button_1_pressed"]

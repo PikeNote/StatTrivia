@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cydro44y8ymyk"]
+[gd_scene load_steps=8 format=3 uid="uid://cydro44y8ymyk"]
 
 [ext_resource type="Script" path="res://QuestionCreator/CategoryCreation.gd" id="1_8oulb"]
 [ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="1_m587t"]
+[ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_6y6pf"]
 [ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_oac58"]
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="4_d7aq7"]
 [ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="6_gus8j"]
@@ -10,6 +11,12 @@
 
 [node name="CategoryCreation" type="Node2D"]
 script = ExtResource("1_8oulb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+texture = ExtResource("2_6y6pf")
 
 [node name="Panel2" type="Sprite2D" parent="."]
 position = Vector2(334, 543)
@@ -62,6 +69,7 @@ layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
 [node name="LineEdit" type="LineEdit" parent="GridContainer/Button2"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 393.0
@@ -79,6 +87,7 @@ layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
 [node name="LineEdit" type="LineEdit" parent="GridContainer/Button3"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 393.0
@@ -96,6 +105,7 @@ layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
 [node name="LineEdit" type="LineEdit" parent="GridContainer/Button4"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 11.0
 offset_right = 393.0
