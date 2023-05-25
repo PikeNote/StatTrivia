@@ -53,8 +53,32 @@ func _process(delta):
 
 func _on_button_pressed(btn):
 	if(btn.get_child(1) == labels[correctAnswer]):
-		btn.get_child(0).Color = Color("2aff65ca");
+		btn.get_child(0).color = Color.html("2aff65ca");
+		correctAnswer += 1;
 	else:
+		btn.get_child(0).color = Color.html("#FF0000");
+		var correct = $GridContainer.get_child(correctAnswer).get_child(0)
+		correct.visible = true;
+		correct.color = Color.html("2aff65ca");
 		pass
 	btn.get_child(0).visible = true;
+	$AnimationPlayer.play("expandingRect");
+	
 		
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if(currentQuestion < questions.size()-1):
+		currentQuestion += 1;
+		_setQuestion(currentQuestion);
+	$AnimationPlayer.seek(0,true);
+	_updateQuestionProgress();
+	_resetVisiblity();
+	pass # Replace with function body.
+
+func _updateQuestionProgress():
+	$QuestionCount/QuestionNumber.text = str(currentQuestion+1) + "/" + str(questions.size())
+
+func _resetVisiblity():
+	for btn in $GridContainer.get_children():
+		btn.get_child(0).visible = false;
