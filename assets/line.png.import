@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://na8gjefv0k5y"
-path="res://.godot/imported/Panel 24.png-1962023b032ae61207d4900f07d87c4a.ctex"
+uid="uid://dcoawopt4k5le"
+path="res://.godot/imported/line.png-29a98d6bb4ae05edfd78b010925c957d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Color 5/Panel 24.png"
-dest_files=["res://.godot/imported/Panel 24.png-1962023b032ae61207d4900f07d87c4a.ctex"]
+source_file="res://assets/line.png"
+dest_files=["res://.godot/imported/line.png-29a98d6bb4ae05edfd78b010925c957d.ctex"]
 
 [params]
 
