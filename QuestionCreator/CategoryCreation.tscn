@@ -361,6 +361,7 @@ theme_override_font_sizes/font_size = 40
 placeholder_text = "Input description here"
 
 [node name="TextEdit" type="TextEdit" parent="CategoryInfo/Label3/TextEdit"]
+layout_mode = 0
 offset_left = 803.0
 offset_top = 518.0
 offset_right = 1645.0

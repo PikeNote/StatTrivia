@@ -9,22 +9,27 @@ var categoriesList = [];
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize();
-	var dir = DirAccess.open("res://Categories/");
+	_loadDir("res://Categories//");
+
+func _loadDir(d):
+	var dir = DirAccess.open(d);
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
 			if !dir.current_is_dir():
-				print(file_name)
-				var categoryDataFile = FileAccess.open("res://Categories/"+file_name, FileAccess.READ);
+				var categoryDataFile = FileAccess.open(d+file_name, FileAccess.READ);
 				var item_data_json = JSON.new();
 				var parsed_json = item_data_json.parse_string(categoryDataFile.get_as_text());
+				print(parsed_json)
 				categoryDataFile.close();
-				categoriesList.append(parsed_json["name"]);
-				categories[parsed_json["name"]] = parsed_json["questions"];
+				categories[parsed_json["name"]] = parsed_json;
 			file_name = dir.get_next()
-	
-	pass # Replace with function body.
+		# Refresh categories list after a reload.
+		categoriesList = [];
+		for item in categories:
+			print(item + "item")
+			categoriesList.append(categories[item]["name"]);
 
 func _randomQuestion(category, count):
 	var randomQuestions = []

@@ -163,6 +163,7 @@ texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button2"]
+layout_mode = 0
 offset_left = -1.0
 offset_right = 601.0
 offset_bottom = 140.0
@@ -188,6 +189,7 @@ texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button3"]
+layout_mode = 0
 offset_left = -1.0
 offset_right = 601.0
 offset_bottom = 140.0
@@ -213,6 +215,7 @@ texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button4"]
+layout_mode = 0
 offset_left = -1.0
 offset_right = 601.0
 offset_bottom = 140.0
