@@ -1,0 +1,178 @@
+[gd_scene load_steps=8 format=3 uid="uid://cifksmccur1w0"]
+
+[ext_resource type="Script" path="res://QuestionCreator/CategoryManagement.tres.gd" id="1_hudu8"]
+[ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_y8slf"]
+[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="3_iorlu"]
+[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="4_vehtt"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_jje6y"]
+[ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="7_8mamm"]
+[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_8j2l1"]
+
+[node name="CategoryManagement" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_hudu8")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+texture = ExtResource("2_y8slf")
+
+[node name="ListBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 203.0
+offset_right = 503.0
+offset_bottom = 829.0
+scale = Vector2(1.21998, 1.31949)
+texture = ExtResource("3_iorlu")
+
+[node name="SettingsBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 203.0
+offset_right = 1798.0
+offset_bottom = 850.0
+scale = Vector2(1.04422, 1.27589)
+texture = ExtResource("4_vehtt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 222.0
+offset_right = 565.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 81
+text = "Category List"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 545.0
+offset_top = -3.0
+offset_right = 1716.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 81
+text = "Info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestionList" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 72.0
+offset_right = 40.0
+offset_bottom = 112.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionList"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 250.0
+offset_right = 567.0
+offset_bottom = 884.0
+
+[node name="QuestionBox" type="ScrollContainer" parent="QuestionList/VBoxContainer"]
+custom_minimum_size = Vector2(0, 615)
+layout_direction = 2
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionList/VBoxContainer/QuestionBox"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="QuestionList/VBoxContainer"]
+layout_mode = 2
+
+[node name="AddCat" type="TextureButton" parent="QuestionList/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_8mamm")
+
+[node name="CategoryInfo" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 61.0
+offset_bottom = 61.0
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="CategoryInfo"]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 250.0
+offset_right = 1100.0
+offset_bottom = 336.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 60
+text = "Category Title:"
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="CategoryInfo/Label2"]
+layout_mode = 0
+offset_top = 58.0
+offset_right = 1148.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 50
+text = "Insert Title Here"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CategoryInfo"]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 400.0
+offset_right = 1098.0
+offset_bottom = 486.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 60
+text = "Category Description:"
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="CategoryInfo/Label3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 64.0
+offset_right = 1150.0
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 50
+text = "Insert Descripton Here"
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="CategoryInfo"]
+layout_mode = 0
+offset_left = 659.0
+offset_top = 677.0
+offset_right = 1200.0
+offset_bottom = 763.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 60
+text = "Number of Questions:"
+vertical_alignment = 1
+
+[node name="QuestionCount" type="Label" parent="CategoryInfo/Label4"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 64.0
+offset_right = 1150.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 50
+text = "0"
+autowrap_mode = 3
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1730.0
+offset_top = 110.0
+offset_right = 1820.0
+offset_bottom = 200.0
+texture_normal = ExtResource("9_8j2l1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="QuestionList/VBoxContainer/CenterContainer/AddCat" to="." method="_on_add_cat_pressed"]

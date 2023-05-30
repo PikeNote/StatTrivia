@@ -5,13 +5,16 @@ var currentQuestion = 0;
 var correctAnswer = 0;
 var labels = [];
 
+var correct_btn = load("res://Color 5/Button_Green.png");
+var wrong_btn = load("res://Color 5/Button_Red.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_resetVisiblity();
 	for button in $GridContainer.get_children():
 		labels.append(button.get_child(1));
 		button.pressed.connect(self._on_button_pressed.bind(button));
 	questions = Categories._randomQuestion("One Variable Data",5);
-	print(questions.size())
 	_setQuestion(currentQuestion);
 	
 	pass # Replace with function body.
@@ -34,8 +37,7 @@ func _setQuestion(s):
 		$question_text.text = question_data["question"];
 	
 	var randomCorrect = randi() % 4;
-	print(randomCorrect);
-	labels[randomCorrect].text = question_data["correct"];
+	labels[randomCorrect].text = question_data["options"][question_data["correct"]];
 	correctAnswer = randomCorrect;
 	
 	for x in range(4):
@@ -53,13 +55,13 @@ func _process(delta):
 
 func _on_button_pressed(btn):
 	if(btn.get_child(1) == labels[correctAnswer]):
-		btn.get_child(0).color = Color.html("2aff65ca");
+		btn.get_child(0).texture = correct_btn
 		correctAnswer += 1;
 	else:
-		btn.get_child(0).color = Color.html("#FF0000");
+		btn.get_child(0).texture = wrong_btn;
 		var correct = $GridContainer.get_child(correctAnswer).get_child(0)
 		correct.visible = true;
-		correct.color = Color.html("2aff65ca");
+		correct.texture = correct_btn
 		pass
 	btn.get_child(0).visible = true;
 	$AnimationPlayer.play("expandingRect");

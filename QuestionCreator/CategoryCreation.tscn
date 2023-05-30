@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cydro44y8ymyk"]
+[gd_scene load_steps=14 format=3 uid="uid://cydro44y8ymyk"]
 
 [ext_resource type="Script" path="res://QuestionCreator/CategoryCreation.gd" id="1_8oulb"]
 [ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="1_m587t"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="6_gus8j"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="7_s5cbx"]
 [ext_resource type="Texture2D" uid="uid://dcoawopt4k5le" path="res://assets/line.png" id="8_meq8k"]
+[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_qvhyk"]
+[ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="10_buhdk"]
+[ext_resource type="Texture2D" uid="uid://cxwxtr3tdheby" path="res://assets/Check_Button.PNG" id="11_4ed50"]
+[ext_resource type="Texture2D" uid="uid://cetae211hh0m5" path="res://assets/Green_Check_Button.PNG" id="11_fq67n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxnxm"]
 
@@ -27,18 +31,18 @@ texture = ExtResource("2_6y6pf")
 [node name="ListBox" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 70.0
-offset_top = 131.0
+offset_top = 203.0
 offset_right = 503.0
-offset_bottom = 757.0
+offset_bottom = 829.0
 scale = Vector2(1.21998, 1.31949)
 texture = ExtResource("1_m587t")
 
 [node name="SettingsBox" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 622.0
-offset_top = 131.0
+offset_top = 203.0
 offset_right = 1798.0
-offset_bottom = 778.0
+offset_bottom = 850.0
 scale = Vector2(1.04422, 1.27589)
 texture = ExtResource("2_oac58")
 
@@ -54,9 +58,9 @@ filters = PackedStringArray("*.png, *.jpg, *.jpeg ; Supported Images")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 101.0
-offset_top = 150.0
+offset_top = 222.0
 offset_right = 565.0
-offset_bottom = 231.0
+offset_bottom = 303.0
 theme_override_fonts/font = ExtResource("7_s5cbx")
 theme_override_font_sizes/font_size = 81
 text = "Question List"
@@ -78,8 +82,9 @@ vertical_alignment = 1
 [node name="QuestionList" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 72.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 112.0
 mouse_filter = 2
 
 [node name="Button1" type="TextureButton" parent="QuestionList"]
@@ -111,7 +116,7 @@ offset_right = 567.0
 offset_bottom = 884.0
 
 [node name="QuestionBox" type="ScrollContainer" parent="QuestionList/VBoxContainer"]
-custom_minimum_size = Vector2(0, 440)
+custom_minimum_size = Vector2(0, 485)
 layout_direction = 2
 layout_mode = 2
 horizontal_scroll_mode = 0
@@ -129,22 +134,16 @@ texture_normal = ExtResource("6_gus8j")
 [node name="Line" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 96.0
-offset_top = 356.0
+offset_top = 428.0
 offset_right = 307.0
-offset_bottom = 371.0
+offset_bottom = 443.0
 scale = Vector2(2.23934, 0.566664)
 texture = ExtResource("8_meq8k")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 892.0
-offset_right = 558.0
-offset_bottom = 939.0
-
 [node name="QuestionSetup" type="Control" parent="."]
-visible = false
 anchors_preset = 0
+offset_top = 61.0
+offset_bottom = 61.0
 mouse_filter = 2
 
 [node name="GridContainer" type="GridContainer" parent="QuestionSetup"]
@@ -160,7 +159,7 @@ custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
-[node name="LineEdit" type="LineEdit" parent="QuestionSetup/GridContainer/Button1"]
+[node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button1"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 11.0
@@ -168,10 +167,10 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
-alignment = 1
+wrap_mode = 1
 caret_blink = true
 caret_blink_interval = 0.5
 
@@ -180,7 +179,7 @@ custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
-[node name="LineEdit" type="LineEdit" parent="QuestionSetup/GridContainer/Button2"]
+[node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button2"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 11.0
@@ -188,10 +187,10 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
-alignment = 1
+wrap_mode = 1
 caret_blink = true
 caret_blink_interval = 0.5
 
@@ -200,7 +199,7 @@ custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
-[node name="LineEdit" type="LineEdit" parent="QuestionSetup/GridContainer/Button3"]
+[node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button3"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 11.0
@@ -208,10 +207,10 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
-alignment = 1
+wrap_mode = 1
 caret_blink = true
 caret_blink_interval = 0.5
 
@@ -220,7 +219,7 @@ custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
 texture = ExtResource("4_d7aq7")
 
-[node name="LineEdit" type="LineEdit" parent="QuestionSetup/GridContainer/Button4"]
+[node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button4"]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 11.0
@@ -228,10 +227,10 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
-alignment = 1
+wrap_mode = 1
 caret_blink = true
 caret_blink_interval = 0.5
 
@@ -245,6 +244,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 placeholder_text = "Input quesiton here"
+wrap_mode = 1
 
 [node name="ImageRect" type="TextureButton" parent="QuestionSetup"]
 layout_mode = 0
@@ -263,9 +263,57 @@ offset_right = 565.0
 offset_bottom = 172.0
 texture = ExtResource("6_gus8j")
 
+[node name="CorrectButton" type="Control" parent="QuestionSetup"]
+anchors_preset = 0
+offset_top = -61.0
+offset_right = 40.0
+offset_bottom = -21.0
+
+[node name="Option_One" type="TextureButton" parent="QuestionSetup/CorrectButton"]
+layout_mode = 0
+offset_left = 749.0
+offset_top = 786.0
+offset_right = 819.0
+offset_bottom = 856.0
+texture_normal = ExtResource("11_fq67n")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Option_Two" type="TextureButton" parent="QuestionSetup/CorrectButton"]
+layout_mode = 0
+offset_left = 749.0
+offset_top = 902.0
+offset_right = 819.0
+offset_bottom = 972.0
+texture_normal = ExtResource("11_4ed50")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Option_Three" type="TextureButton" parent="QuestionSetup/CorrectButton"]
+layout_mode = 0
+offset_left = 1635.0
+offset_top = 786.0
+offset_right = 1705.0
+offset_bottom = 856.0
+texture_normal = ExtResource("11_4ed50")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Option_Four" type="TextureButton" parent="QuestionSetup/CorrectButton"]
+layout_mode = 0
+offset_left = 1635.0
+offset_top = 902.0
+offset_right = 1705.0
+offset_bottom = 972.0
+texture_normal = ExtResource("11_4ed50")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="CategoryInfo" type="Control" parent="."]
 visible = false
 anchors_preset = 0
+offset_top = 61.0
+offset_bottom = 61.0
 mouse_filter = 2
 
 [node name="Label2" type="Label" parent="CategoryInfo"]
@@ -312,9 +360,40 @@ theme_override_fonts/font = ExtResource("7_s5cbx")
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Input description here"
 
+[node name="TextEdit" type="TextEdit" parent="CategoryInfo/Label3/TextEdit"]
+offset_left = 803.0
+offset_top = 518.0
+offset_right = 1645.0
+offset_bottom = 700.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Input quesiton here"
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1730.0
+offset_top = 110.0
+offset_right = 1820.0
+offset_bottom = 200.0
+texture_normal = ExtResource("9_qvhyk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SaveButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1637.0
+offset_top = 110.0
+offset_right = 1727.0
+offset_bottom = 200.0
+texture_normal = ExtResource("10_buhdk")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="QuestionList/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="QuestionList/VBoxContainer/CenterContainer/AddCat" to="." method="_on_add_cat_pressed"]
+[connection signal="lines_edited_from" from="QuestionSetup/GridContainer/Button1/LineEdit" to="." method="_on_line_edit_lines_edited_from"]
 [connection signal="text_changed" from="QuestionSetup/GridContainer/Button1/LineEdit" to="." method="_option_changed" binds= [0]]
 [connection signal="text_changed" from="QuestionSetup/GridContainer/Button2/LineEdit" to="." method="_option_changed" binds= [1]]
 [connection signal="text_changed" from="QuestionSetup/GridContainer/Button3/LineEdit" to="." method="_option_changed" binds= [2]]
@@ -323,3 +402,4 @@ placeholder_text = "Input description here"
 [connection signal="pressed" from="QuestionSetup/ImageRect" to="." method="_on_image_rect_pressed"]
 [connection signal="text_changed" from="CategoryInfo/Label2/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_changed" from="CategoryInfo/Label3/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

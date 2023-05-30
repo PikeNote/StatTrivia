@@ -10,17 +10,29 @@ var data = {
 		"",
 		"",
 		""
-	]
+	],
+	"correct":0
 }
 
 func setImage(s):
 	data["image_data"] = s;
 
 func setQuestion(s):
+	
 	data["question"] = s;
 	
 func setOptions(i,s):
+	print("set")
 	data["options"][i] = s;
+	
+func setCorrect(s):
+	data["correct"] = s;
+
+func getCorrect():
+	return data["correct"]
+
+func setData(s):
+	data = s;
 
 func getData():
 	return data;
@@ -41,3 +53,7 @@ func _setActive(b):
 
 func _setText(s):
 	$Label.text = s;
+
+func _on_delete_button_pressed():
+	$".".queue_free();
+

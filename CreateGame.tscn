@@ -1,0 +1,147 @@
+[gd_scene load_steps=7 format=3 uid="uid://gmqt75oh4vj0"]
+
+[ext_resource type="Texture2D" uid="uid://dvqc2edmlw64a" path="res://assets/Rob_Top_Right.PNG" id="1_7te4t"]
+[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="2_5g8so"]
+[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_b7clh"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="4_3dar7"]
+[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="5_5knrp"]
+[ext_resource type="PackedScene" uid="uid://dnlggmhpj748c" path="res://Presets/category_select_btn.tscn" id="6_g0x14"]
+
+[node name="CreateGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RobTopRight" type="TextureRect" parent="."]
+layout_mode = 0
+texture = ExtResource("1_7te4t")
+
+[node name="Panel8" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 47.0
+offset_right = 1237.0
+offset_bottom = 694.0
+scale = Vector2(0.795918, 0.699382)
+texture = ExtResource("2_b7clh")
+
+[node name="Panel2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 509.0
+offset_right = 546.0
+offset_bottom = 1158.0
+scale = Vector2(0.889723, 0.809904)
+texture = ExtResource("2_5g8so")
+
+[node name="Panel3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 507.0
+offset_right = 1043.0
+offset_bottom = 1156.0
+scale = Vector2(0.889723, 0.809904)
+texture = ExtResource("2_5g8so")
+
+[node name="CustomizerTitle" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 40.0
+offset_right = 991.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_font_sizes/font_size = 60
+text = "Game Customizer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InactiveTitle" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 506.0
+offset_right = 486.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_font_sizes/font_size = 45
+text = "Inactive Categories"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActiveTitle" type="Label" parent="."]
+offset_left = 564.0
+offset_top = 506.0
+offset_right = 983.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_font_sizes/font_size = 45
+text = "Active Categories"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionOne" type="Label" parent="."]
+offset_left = 1059.0
+offset_top = 189.0
+offset_right = 1521.0
+offset_bottom = 419.0
+theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_font_sizes/font_size = 45
+text = "Customize game settings
+via the Game Customizer
+
+- # of Questions 
+- Question mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionTwo" type="Label" parent="."]
+offset_left = 991.0
+offset_top = 618.0
+offset_right = 1589.0
+offset_bottom = 912.0
+theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_font_sizes/font_size = 45
+text = "Click items in the ianctive 
+categories section to make them
+\"active categories\"
+
+Active categories will be added 
+to the pool of questions asked."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionTwo2" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 123.0
+offset_right = 547.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_font_sizes/font_size = 45
+text = "Number of questions:"
+
+[node name="LineEdit" type="SpinBox" parent="InstructionTwo2"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 614.0
+offset_bottom = 78.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 46.0
+offset_right = 1116.0
+offset_bottom = 131.0
+texture_normal = ExtResource("5_5knrp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 585.0
+offset_right = 459.0
+offset_bottom = 1021.0
+
+[node name="CategorySelect_btn" parent="VBoxContainer" instance=ExtResource("6_g0x14")]
+custom_minimum_size = Vector2(367, 80)
+layout_mode = 2

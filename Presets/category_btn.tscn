@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://gkwu7k1xuf2n"]
+
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="1_4q2jy"]
+[ext_resource type="Script" path="res://Presets/category_btn.gd" id="2_8sytf"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="3_4k402"]
+[ext_resource type="Texture2D" uid="uid://piq3gqbiqf1m" path="res://assets/ChangeName_Button.PNG" id="4_bwbvv"]
+[ext_resource type="Texture2D" uid="uid://bpnn2xbbqyigb" path="res://assets/IMG_2832.png" id="5_vhlr5"]
+
+[node name="CategoryBtn" type="TextureButton"]
+custom_minimum_size = Vector2(459, 102)
+mouse_filter = 1
+texture_normal = ExtResource("1_4q2jy")
+stretch_mode = 0
+script = ExtResource("2_8sytf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 405.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("3_4k402")
+theme_override_font_sizes/font_size = 40
+text = "Category Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="EditButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 7.0
+offset_right = 452.0
+offset_bottom = 50.0
+texture_normal = ExtResource("4_bwbvv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DeleteButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 52.0
+offset_right = 452.0
+offset_bottom = 95.0
+texture_normal = ExtResource("5_vhlr5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="EditButton" to="." method="_on_edit_button_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dy04j4p55wsa6"]
+[gd_scene load_steps=10 format=3 uid="uid://dy04j4p55wsa6"]
 
 [ext_resource type="Script" path="res://QuestionTemp.gd" id="1_3ge0g"]
 [ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="2_66jwl"]
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="3_sojs0"]
+[ext_resource type="Texture2D" uid="uid://gdf14es3m6rb" path="res://Color 5/Button_Green.png" id="4_bluoo"]
 [ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="4_x6ost"]
 [ext_resource type="Texture2D" uid="uid://niqisen1qayq" path="res://assets/Circle_Button.png" id="5_3o0lw"]
 
@@ -18,31 +19,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 116)]
+"values": [Vector2(0, 140)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GridContainer/Button2/CorrectWrongColor:position")
+tracks/1/path = NodePath("GridContainer/Button3/CorrectWrongColor:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(14, 11)]
+"values": [Vector2(602, 140)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GridContainer/Button3/CorrectWrongColor:size")
+tracks/2/path = NodePath("GridContainer/Button2/CorrectWrongColor:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(574, 116)]
+"values": [Vector2(602, 140)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -54,19 +55,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(574, 116)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("GridContainer/Button2/CorrectWrongColor:size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(574, 116)]
+"values": [Vector2(602, 140)]
 }
 
 [sub_resource type="Animation" id="Animation_qkst8"]
@@ -78,10 +67,10 @@ tracks/0/path = NodePath("GridContainer/Button1/CorrectWrongColor:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 116), Vector2(572, 116)]
+"values": [Vector2(0, 140), Vector2(602, 140)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -90,34 +79,34 @@ tracks/1/path = NodePath("GridContainer/Button3/CorrectWrongColor:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 116), Vector2(574, 116)]
+"values": [Vector2(0, 140), Vector2(602, 140)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
+tracks/2/path = NodePath("GridContainer/Button2/CorrectWrongColor:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 116), Vector2(574, 116)]
+"values": [Vector2(0, 140), Vector2(602, 140)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GridContainer/Button2/CorrectWrongColor:size")
+tracks/3/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 116), Vector2(574, 116)]
+"values": [Vector2(0, 140), Vector2(602, 140)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0e650"]
@@ -147,14 +136,13 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button1"]
-visible = false
+[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button1"]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 14.0
-offset_bottom = 127.0
-color = Color(0.164706, 1, 0.396078, 0.792157)
+offset_left = -1.0
+offset_right = -1.0
+offset_bottom = 140.0
+texture = ExtResource("4_bluoo")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="GridContainer/Button1"]
 layout_mode = 0
@@ -162,7 +150,6 @@ offset_left = 16.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Placeholder text"
 horizontal_alignment = 1
@@ -175,14 +162,12 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button2"]
-visible = false
-layout_mode = 0
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 588.0
-offset_bottom = 127.0
-color = Color(0.164706, 1, 0.396078, 0.792157)
+[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button2"]
+offset_left = -1.0
+offset_right = 601.0
+offset_bottom = 140.0
+texture = ExtResource("4_bluoo")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="GridContainer/Button2"]
 layout_mode = 0
@@ -190,7 +175,6 @@ offset_left = 18.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Placeholder text"
 horizontal_alignment = 1
@@ -203,14 +187,12 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button3"]
-visible = false
-layout_mode = 0
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 588.0
-offset_bottom = 127.0
-color = Color(0.164706, 1, 0.396078, 0.792157)
+[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button3"]
+offset_left = -1.0
+offset_right = 601.0
+offset_bottom = 140.0
+texture = ExtResource("4_bluoo")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="GridContainer/Button3"]
 layout_mode = 0
@@ -218,7 +200,6 @@ offset_left = 18.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Placeholder text"
 horizontal_alignment = 1
@@ -231,14 +212,12 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="ColorRect" parent="GridContainer/Button4"]
-visible = false
-layout_mode = 0
-offset_left = 14.0
-offset_top = 11.0
-offset_right = 588.0
-offset_bottom = 127.0
-color = Color(0.164706, 1, 0.396078, 0.792157)
+[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button4"]
+offset_left = -1.0
+offset_right = 601.0
+offset_bottom = 140.0
+texture = ExtResource("4_bluoo")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="GridContainer/Button4"]
 layout_mode = 0
@@ -246,7 +225,6 @@ offset_left = 18.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Placeholder text"
 horizontal_alignment = 1
