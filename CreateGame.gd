@@ -20,6 +20,7 @@ func inst_btn_clicked(btn:TextureButton):
 		$ActiveCategories.add_child(btn)
 	else:
 		$InactiveCategories.add_child(btn);
+	_on_line_edit_value_changed($InstructionTwo2/LineEdit.value)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -35,5 +36,27 @@ func _on_play_button_pressed():
 	for active_cat in $ActiveCategories.get_children():
 		Categories.activeCategories.append(Categories.categoriesList[active_cat.getCat()]);
 	GameManager.total_questions = int($InstructionTwo2/LineEdit.value);
-	get_tree().change_scene_to_file("res://QuestionTemp.tscn");
+	$Transitioner.transition_scene(self, "res://QuestionTemp.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.RIGHT)
+	pass # Replace with function body.
+
+func getTotalQuestions():
+	var q_count = 0;
+	for cat_btn in $ActiveCategories.get_children():
+		q_count += cat_btn.getQuestionCount();
+	return q_count;
+
+func _on_line_edit_value_changed(value):
+	$ErrorMsg.visible = true;
+	if(value > getTotalQuestions()):
+		$ErrorMsg.text = "The number of questions selected is greater than the number of questions in the active categories."
+	elif(value < $ActiveCategories.get_child_count()):
+		$ErrorMsg.text = "The number of questions selected is less than the number active categories."
+	elif(value == 0):
+		$ErrorMsg.text = "The number of questions selected cannot be 0."
+	else:
+		$ErrorMsg.visible = false;
+
+
+func _on_quit_button_pressed():
+	$Transitioner.transition_scene(self, "res://Main.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.LEFT)
 	pass # Replace with function body.

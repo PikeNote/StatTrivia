@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cifksmccur1w0"]
+[gd_scene load_steps=11 format=3 uid="uid://cifksmccur1w0"]
 
 [ext_resource type="Script" path="res://QuestionCreator/CategoryManagement.tres.gd" id="1_hudu8"]
 [ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_y8slf"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="4_vehtt"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_jje6y"]
 [ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="7_8mamm"]
+[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="8_bvhpy"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="8_xd732"]
 [ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_8j2l1"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="9_h28i5"]
 
 [node name="CategoryManagement" type="Control"]
 layout_mode = 3
@@ -172,7 +175,13 @@ offset_top = 110.0
 offset_right = 1820.0
 offset_bottom = 200.0
 texture_normal = ExtResource("9_8j2l1")
+texture_click_mask = ExtResource("8_xd732")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("9_h28i5")
+
+[node name="Transitioner" type="Node" parent="."]
+script = ExtResource("8_bvhpy")
 
 [connection signal="pressed" from="QuestionList/VBoxContainer/CenterContainer/AddCat" to="." method="_on_add_cat_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

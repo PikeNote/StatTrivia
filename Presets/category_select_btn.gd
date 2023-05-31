@@ -9,11 +9,20 @@ func _ready():
 func loadCat(i):
 	catInd = i;
 	$Label.text = Categories.categories[Categories.categoriesList[i]]["name"];
-	$Label2.text = str(Categories.categories[Categories.categoriesList[i]]["questions"].size()) + " questions";
+	$Label2.text = str(getQuestionCount()) + " questions";
 
 func getCat():
 	return catInd;
 
+func getQuestionCount():
+	return Categories.categories[Categories.categoriesList[catInd]]["questions"].size();
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _on_mouse_entered():
+	self_modulate = Color.html("cfcfcf");
+
+func _on_mouse_exited():
+	self_modulate = Color.html("ffffff");

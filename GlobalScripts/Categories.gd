@@ -35,7 +35,7 @@ func _randomQuestion(category, count):
 	var randomQuestions = []
 	var cat_questions = categories[category];
 	for x in range(count):
-		var ranQues = cat_questions[randi()%cat_questions.size()]
+		var ranQues = cat_questions["questions"][randi()%cat_questions["questions"].size()]
 		cat_questions.erase(ranQues);
 		randomQuestions.append(ranQues);
 	return randomQuestions;

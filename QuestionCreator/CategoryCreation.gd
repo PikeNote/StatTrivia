@@ -176,13 +176,16 @@ func _on_save_button_pressed():
 	for ques_btn in $QuestionList/VBoxContainer/QuestionBox/VBoxContainer.get_children():
 		EditCategory.data["questions"].append(ques_btn.getData());
 	EditCategory.saveData();
-	get_tree().change_scene_to_file("res://QuestionCreator/CategoryManagement.tscn");
+	$Transitioner.transition_scene(self, "res://QuestionCreator/CategoryManagement.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.LEFT)
+
+func _on_quit_button_pressed():
+	$Transitioner.transition_scene(self, "res://QuestionCreator/CategoryManagement.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.LEFT)
+
 
 func correct_answer_pressed(btn:TextureButton):
 	resetSel();
 	$QuestionSetup/CorrectButton.get_child(currentQuestion.getCorrect()).texture_normal = checkNormal;
 	currentQuestion.setCorrect(btn.get_index());
 	btn.texture_normal = checkGreen;
-
 
 

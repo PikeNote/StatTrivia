@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtj23im4w7a51"]
+[gd_scene load_steps=7 format=3 uid="uid://dtj23im4w7a51"]
 
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="1_xmdaq"]
 [ext_resource type="Script" path="res://Presets/question_btn.gd" id="2_01e58"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="3_wpqjr"]
 [ext_resource type="Texture2D" uid="uid://bpnn2xbbqyigb" path="res://assets/IMG_2832.png" id="4_onvgb"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="5_ahjc2"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="6_6hg62"]
 
 [node name="QuestionBtn" type="TextureButton"]
 custom_minimum_size = Vector2(459, 102)
@@ -32,8 +34,10 @@ offset_top = 21.0
 offset_right = 452.0
 offset_bottom = 75.0
 texture_normal = ExtResource("4_onvgb")
+texture_click_mask = ExtResource("5_ahjc2")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("6_6hg62")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

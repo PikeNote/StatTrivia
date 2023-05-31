@@ -115,8 +115,14 @@ _data = {
 "expandingRect": SubResource("Animation_qkst8")
 }
 
-[node name="Questions" type="Node2D"]
-position = Vector2(4, 4)
+[node name="Questions" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+mouse_filter = 1
 script = ExtResource("1_3ge0g")
 
 [node name="RobBottomLeft" type="Sprite2D" parent="."]
@@ -124,6 +130,7 @@ position = Vector2(954, 534)
 texture = ExtResource("2_66jwl")
 
 [node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
 offset_left = 456.0
 offset_top = 742.0
 offset_right = 1660.0
@@ -267,6 +274,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="question_text" type="Label" parent="."]
+layout_mode = 0
 offset_left = 474.0
 offset_top = 107.0
 offset_right = 1648.0
@@ -279,10 +287,12 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="QuestionCount" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1737.0
 offset_top = 35.0
 offset_right = 1882.0
@@ -297,8 +307,8 @@ offset_top = 15.0
 offset_right = 131.0
 offset_bottom = 132.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "1/5"
+theme_override_font_sizes/font_size = 35
+text = "1/10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -307,5 +317,4 @@ libraries = {
 "": SubResource("AnimationLibrary_0e650")
 }
 
-[connection signal="pressed" from="GridContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

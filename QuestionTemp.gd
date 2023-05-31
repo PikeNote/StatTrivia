@@ -27,15 +27,23 @@ func _ready():
 	#questions = Categories._randomQuestion("One Variable Data",5);
 	
 	for i in range(remainder):
-		questions = questions + Categories._randomQuestion(Categories.activeCategories[randi() % Categories.activeCategories.size()],1);
+		questions.append(generateUniqueQues());
 	
 	
 	_setQuestion(currentQuestion);
 	
+	_updateQuestionProgress();
+	
 	pass # Replace with function body.
 
+func generateUniqueQues():
+	var randQuestion = Categories._randomQuestion(Categories.activeCategories[randi() % Categories.activeCategories.size()],1);
+	while questions.has(randQuestion[0]):
+		randQuestion = Categories._randomQuestion(Categories.activeCategories[randi() % Categories.activeCategories.size()],1);
+	return randQuestion[0];
+
 func _setQuestion(s):
-	var question_data = questions[s];
+	var question_data = questions[s].duplicate(true);
 	
 	
 	if(question_data.has("image_data") && question_data["image_data"] != ""):
@@ -52,6 +60,7 @@ func _setQuestion(s):
 		$question_text.text = question_data["question"];
 	
 	var randomCorrect = randi() % 4;
+	print(question_data["options"])
 	labels[randomCorrect].text = question_data["options"][question_data["correct"]];
 	correctAnswer = randomCorrect;
 	

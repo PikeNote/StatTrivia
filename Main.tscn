@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfpcxsgc43xd2"]
+[gd_scene load_steps=6 format=3 uid="uid://bfpcxsgc43xd2"]
 
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_4loon"]
 [ext_resource type="Texture2D" uid="uid://cealbhujdtngv" path="res://assets/Stats_Main_Menu_With_Title.png" id="1_allfu"]
 [ext_resource type="Texture2D" uid="uid://0ym8fkgwjybr" path="res://assets/Rectangle_Button.png" id="2_6jkic"]
+[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="3_hdw8q"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="4_3un04"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_4loon")
 
 [node name="Panel8" type="Sprite2D" parent="."]
 position = Vector2(958.5, 541.5)
@@ -11,19 +18,21 @@ scale = Vector2(0.999479, 1.00463)
 texture = ExtResource("1_allfu")
 
 [node name="VFlowContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 676.0
 offset_top = 346.25
 offset_right = 1276.0
 offset_bottom = 998.25
 
-[node name="TextureButton" type="TextureButton" parent="VFlowContainer"]
+[node name="PlayBtn" type="TextureButton" parent="VFlowContainer"]
 custom_minimum_size = Vector2(400, 160)
 layout_mode = 2
 texture_normal = ExtResource("2_6jkic")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_3un04")
 
-[node name="Label" type="Label" parent="VFlowContainer/TextureButton"]
+[node name="Label" type="Label" parent="VFlowContainer/PlayBtn"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
@@ -34,14 +43,15 @@ text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="VFlowContainer"]
+[node name="CategoriesBtn" type="TextureButton" parent="VFlowContainer"]
 custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
 texture_normal = ExtResource("2_6jkic")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_3un04")
 
-[node name="Label" type="Label" parent="VFlowContainer/TextureButton2"]
+[node name="Label" type="Label" parent="VFlowContainer/CategoriesBtn"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
@@ -52,14 +62,15 @@ text = "Categories"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton3" type="TextureButton" parent="VFlowContainer"]
+[node name="SettingsBtn" type="TextureButton" parent="VFlowContainer"]
 custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
 texture_normal = ExtResource("2_6jkic")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_3un04")
 
-[node name="Label" type="Label" parent="VFlowContainer/TextureButton3"]
+[node name="Label" type="Label" parent="VFlowContainer/SettingsBtn"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
@@ -70,14 +81,15 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton4" type="TextureButton" parent="VFlowContainer"]
+[node name="CreditsBtn" type="TextureButton" parent="VFlowContainer"]
 custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
 texture_normal = ExtResource("2_6jkic")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("4_3un04")
 
-[node name="Label" type="Label" parent="VFlowContainer/TextureButton4"]
+[node name="Label" type="Label" parent="VFlowContainer/CreditsBtn"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
@@ -87,3 +99,9 @@ theme_override_font_sizes/font_size = 60
 text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Transitioner" type="Node" parent="."]
+script = ExtResource("3_hdw8q")
+
+[connection signal="pressed" from="VFlowContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="VFlowContainer/CategoriesBtn" to="." method="_on_categories_btn_pressed"]

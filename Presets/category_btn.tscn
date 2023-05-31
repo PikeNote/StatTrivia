@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://gkwu7k1xuf2n"]
+[gd_scene load_steps=8 format=3 uid="uid://gkwu7k1xuf2n"]
 
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="1_4q2jy"]
 [ext_resource type="Script" path="res://Presets/category_btn.gd" id="2_8sytf"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="3_4k402"]
 [ext_resource type="Texture2D" uid="uid://piq3gqbiqf1m" path="res://assets/ChangeName_Button.PNG" id="4_bwbvv"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="5_pqgym"]
 [ext_resource type="Texture2D" uid="uid://bpnn2xbbqyigb" path="res://assets/IMG_2832.png" id="5_vhlr5"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="6_m4pna"]
 
 [node name="CategoryBtn" type="TextureButton"]
 custom_minimum_size = Vector2(459, 102)
@@ -35,8 +37,10 @@ offset_top = 7.0
 offset_right = 452.0
 offset_bottom = 50.0
 texture_normal = ExtResource("4_bwbvv")
+texture_click_mask = ExtResource("5_pqgym")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("6_m4pna")
 
 [node name="DeleteButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -45,8 +49,10 @@ offset_top = 52.0
 offset_right = 452.0
 offset_bottom = 95.0
 texture_normal = ExtResource("5_vhlr5")
+texture_click_mask = ExtResource("5_pqgym")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("6_m4pna")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

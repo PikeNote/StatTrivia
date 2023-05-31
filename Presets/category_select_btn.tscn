@@ -35,3 +35,6 @@ theme_override_font_sizes/font_size = 30
 text = "30 questions"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

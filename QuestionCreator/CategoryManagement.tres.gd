@@ -63,3 +63,8 @@ func _on_add_cat_pressed():
 	inst_btn.writeFile();
 	$QuestionList/VBoxContainer/QuestionBox/VBoxContainer.add_child(inst_btn);
 	inst_btn.pressed.connect(cat_btn_click.bind(inst_btn));
+
+
+func _on_quit_button_pressed():
+	$Transitioner.transition_scene(self, "res://Main.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.LEFT)
+	pass # Replace with function body.

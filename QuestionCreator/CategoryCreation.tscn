@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cydro44y8ymyk"]
+[gd_scene load_steps=17 format=3 uid="uid://cydro44y8ymyk"]
 
 [ext_resource type="Script" path="res://QuestionCreator/CategoryCreation.gd" id="1_8oulb"]
 [ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="1_m587t"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="10_buhdk"]
 [ext_resource type="Texture2D" uid="uid://cxwxtr3tdheby" path="res://assets/Check_Button.PNG" id="11_4ed50"]
 [ext_resource type="Texture2D" uid="uid://cetae211hh0m5" path="res://assets/Green_Check_Button.PNG" id="11_fq67n"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="12_jlm23"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="13_eg70p"]
+[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="13_qt65c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxnxm"]
 
@@ -378,8 +381,10 @@ offset_top = 110.0
 offset_right = 1820.0
 offset_bottom = 200.0
 texture_normal = ExtResource("9_qvhyk")
+texture_click_mask = ExtResource("12_jlm23")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("13_eg70p")
 
 [node name="SaveButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -388,8 +393,13 @@ offset_top = 110.0
 offset_right = 1727.0
 offset_bottom = 200.0
 texture_normal = ExtResource("10_buhdk")
+texture_click_mask = ExtResource("12_jlm23")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("13_eg70p")
+
+[node name="Transitioner" type="Node" parent="."]
+script = ExtResource("13_qt65c")
 
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="QuestionList/Button1" to="." method="_on_button_1_pressed"]
@@ -403,4 +413,5 @@ stretch_mode = 0
 [connection signal="pressed" from="QuestionSetup/ImageRect" to="." method="_on_image_rect_pressed"]
 [connection signal="text_changed" from="CategoryInfo/Label2/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="text_changed" from="CategoryInfo/Label3/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gmqt75oh4vj0"]
+[gd_scene load_steps=11 format=3 uid="uid://gmqt75oh4vj0"]
 
 [ext_resource type="Texture2D" uid="uid://dvqc2edmlw64a" path="res://assets/Rob_Top_Right.PNG" id="1_7te4t"]
 [ext_resource type="Script" path="res://CreateGame.gd" id="1_07vuu"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_b7clh"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="4_3dar7"]
 [ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="5_5knrp"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="7_6ux6i"]
 [ext_resource type="Texture2D" uid="uid://bahpioa2fri4r" path="res://assets/Play_Button.PNG" id="7_uf06y"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="8_6jhb1"]
+[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="10_x5yhg"]
 
 [node name="CreateGame" type="Control"]
 layout_mode = 3
@@ -103,10 +106,10 @@ vertical_alignment = 1
 
 [node name="InstructionTwo" type="Label" parent="."]
 layout_mode = 0
-offset_left = 991.0
-offset_top = 618.0
-offset_right = 1589.0
-offset_bottom = 912.0
+offset_left = 999.0
+offset_top = 512.0
+offset_right = 1597.0
+offset_bottom = 806.0
 theme_override_fonts/font = ExtResource("4_3dar7")
 theme_override_font_sizes/font_size = 45
 text = "Click items in the ianctive 
@@ -117,6 +120,19 @@ Active categories will be added
 to the pool of questions asked."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ErrorMsg" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 891.0
+offset_right = 1861.0
+offset_bottom = 983.0
+theme_override_colors/font_color = Color(0.94902, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_font_sizes/font_size = 45
+text = "The number of questions selected cannot be 0."
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="InstructionTwo2" type="Label" parent="."]
 layout_mode = 0
@@ -141,8 +157,10 @@ offset_top = 46.0
 offset_right = 1116.0
 offset_bottom = 131.0
 texture_normal = ExtResource("5_5knrp")
+texture_click_mask = ExtResource("7_6ux6i")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("8_6jhb1")
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -151,8 +169,10 @@ offset_top = 46.0
 offset_right = 1205.0
 offset_bottom = 131.0
 texture_normal = ExtResource("7_uf06y")
+texture_click_mask = ExtResource("7_6ux6i")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("8_6jhb1")
 
 [node name="InactiveCategories" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -168,4 +188,9 @@ offset_top = 585.0
 offset_right = 955.0
 offset_bottom = 1021.0
 
+[node name="Transitioner" type="Node" parent="."]
+script = ExtResource("10_x5yhg")
+
+[connection signal="value_changed" from="InstructionTwo2/LineEdit" to="." method="_on_line_edit_value_changed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
