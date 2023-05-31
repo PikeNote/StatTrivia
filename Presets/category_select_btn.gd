@@ -11,6 +11,9 @@ func loadCat(i):
 	$Label.text = Categories.categories[Categories.categoriesList[i]]["name"];
 	$Label2.text = str(Categories.categories[Categories.categoriesList[i]]["questions"].size()) + " questions";
 
+func getCat():
+	return catInd;
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

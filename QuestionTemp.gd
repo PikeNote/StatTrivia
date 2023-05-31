@@ -10,11 +10,26 @@ var wrong_btn = load("res://Color 5/Button_Red.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize();
 	_resetVisiblity();
 	for button in $GridContainer.get_children():
 		labels.append(button.get_child(1));
 		button.pressed.connect(self._on_button_pressed.bind(button));
-	questions = Categories._randomQuestion("One Variable Data",5);
+	
+	var numberOfQuestions = floor(GameManager.total_questions/Categories.activeCategories.size())
+	print(GameManager.total_questions)
+	print(Categories.activeCategories.size());
+	var remainder = GameManager.total_questions % Categories.activeCategories.size();
+	
+	for cat in Categories.activeCategories:
+		questions = questions + Categories._randomQuestion(cat,numberOfQuestions);
+		
+	#questions = Categories._randomQuestion("One Variable Data",5);
+	
+	for i in range(remainder):
+		questions = questions + Categories._randomQuestion(Categories.activeCategories[randi() % Categories.activeCategories.size()],1);
+	
+	
 	_setQuestion(currentQuestion);
 	
 	pass # Replace with function body.

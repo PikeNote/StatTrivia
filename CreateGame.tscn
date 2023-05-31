@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://gmqt75oh4vj0"]
+[gd_scene load_steps=8 format=3 uid="uid://gmqt75oh4vj0"]
 
 [ext_resource type="Texture2D" uid="uid://dvqc2edmlw64a" path="res://assets/Rob_Top_Right.PNG" id="1_7te4t"]
 [ext_resource type="Script" path="res://CreateGame.gd" id="1_07vuu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_b7clh"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="4_3dar7"]
 [ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="5_5knrp"]
+[ext_resource type="Texture2D" uid="uid://bahpioa2fri4r" path="res://assets/Play_Button.PNG" id="7_uf06y"]
 
 [node name="CreateGame" type="Control"]
 layout_mode = 3
@@ -133,13 +134,23 @@ offset_top = 40.0
 offset_right = 614.0
 offset_bottom = 78.0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1031.0
 offset_top = 46.0
 offset_right = 1116.0
 offset_bottom = 131.0
 texture_normal = ExtResource("5_5knrp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 46.0
+offset_right = 1205.0
+offset_bottom = 131.0
+texture_normal = ExtResource("7_uf06y")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -156,3 +167,5 @@ offset_left = 588.0
 offset_top = 585.0
 offset_right = 955.0
 offset_bottom = 1021.0
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

@@ -28,3 +28,12 @@ func _process(delta):
 
 func _on_question_edit_value_changed(value):
 	pass # Replace with function body.
+
+
+func _on_play_button_pressed():
+	Categories.activeCategories = [];
+	for active_cat in $ActiveCategories.get_children():
+		Categories.activeCategories.append(Categories.categoriesList[active_cat.getCat()]);
+	GameManager.total_questions = int($InstructionTwo2/LineEdit.value);
+	get_tree().change_scene_to_file("res://QuestionTemp.tscn");
+	pass # Replace with function body.
