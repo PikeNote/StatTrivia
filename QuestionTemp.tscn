@@ -125,8 +125,10 @@ offset_bottom = 4.0
 mouse_filter = 1
 script = ExtResource("1_3ge0g")
 
-[node name="RobBottomLeft" type="Sprite2D" parent="."]
-position = Vector2(954, 534)
+[node name="RobBottomLeft" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("2_66jwl")
 
 [node name="GridContainer" type="GridContainer" parent="."]

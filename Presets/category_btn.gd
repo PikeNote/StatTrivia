@@ -57,6 +57,7 @@ func _setText(s):
 	$Label.text = s;
 
 func _on_delete_button_pressed():
+	DirAccess.remove_absolute(path);
 	$".".queue_free();
 
 func _on_edit_button_pressed():

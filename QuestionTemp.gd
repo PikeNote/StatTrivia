@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var questions = [];
 var currentQuestion = 0;

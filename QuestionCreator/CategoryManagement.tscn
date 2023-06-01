@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cifksmccur1w0"]
+[gd_scene load_steps=15 format=3 uid="uid://cifksmccur1w0"]
 
 [ext_resource type="Script" path="res://QuestionCreator/CategoryManagement.tres.gd" id="1_hudu8"]
 [ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_y8slf"]
@@ -6,10 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="4_vehtt"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_jje6y"]
 [ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="7_8mamm"]
+[ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="7_hel1h"]
 [ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="8_bvhpy"]
 [ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="8_xd732"]
 [ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_8j2l1"]
 [ext_resource type="Script" path="res://Presets/HoverButton.gd" id="9_h28i5"]
+[ext_resource type="Texture2D" uid="uid://po1xwhxjdhtt" path="res://assets/Join_Lobby_Button.PNG" id="11_g6lqo"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="12_04pdu"]
+[ext_resource type="Script" path="res://QuestionCreator/ImportCat.gd" id="12_18rog"]
 
 [node name="CategoryManagement" type="Control"]
 layout_mode = 3
@@ -168,6 +172,31 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 autowrap_mode = 3
 
+[node name="Export" type="TextureButton" parent="CategoryInfo"]
+layout_mode = 0
+offset_left = 1697.0
+offset_top = 261.0
+offset_right = 1817.0
+offset_bottom = 381.0
+texture_normal = ExtResource("7_hel1h")
+texture_click_mask = ExtResource("8_xd732")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("9_h28i5")
+
+[node name="Label2" type="Label" parent="CategoryInfo/Export"]
+visible = false
+offset_left = -64.0
+offset_top = 118.0
+offset_right = 122.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0, 0.67451, 0, 1)
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 60
+text = "Copied!"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1730.0
@@ -180,8 +209,89 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("9_h28i5")
 
+[node name="ImportButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 939.0
+offset_right = 533.0
+offset_bottom = 1018.0
+texture_normal = ExtResource("11_g6lqo")
+texture_click_mask = ExtResource("8_xd732")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("9_h28i5")
+
+[node name="ImportCat" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_18rog")
+
+[node name="Background" type="TextureRect" parent="ImportCat"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 287.0
+offset_right = 1584.0
+offset_bottom = 934.0
+mouse_filter = 0
+texture = ExtResource("4_vehtt")
+
+[node name="Label" type="Label" parent="ImportCat"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 299.0
+offset_right = 1551.0
+offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 70
+text = "Import Category"
+horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="ImportCat"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 388.0
+offset_right = 1533.0
+offset_bottom = 704.0
+wrap_mode = 1
+
+[node name="SubmitImport" type="TextureButton" parent="ImportCat"]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 756.0
+offset_right = 1218.0
+offset_bottom = 858.0
+texture_normal = ExtResource("12_04pdu")
+script = ExtResource("9_h28i5")
+
+[node name="Label" type="Label" parent="ImportCat/SubmitImport"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_font_sizes/font_size = 60
+text = "Submit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="TextureButton" parent="ImportCat"]
+offset_left = 1468.0
+offset_top = 285.0
+offset_right = 1558.0
+offset_bottom = 375.0
+texture_normal = ExtResource("9_8j2l1")
+texture_click_mask = ExtResource("8_xd732")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("9_h28i5")
+
 [node name="Transitioner" type="Node" parent="."]
 script = ExtResource("8_bvhpy")
 
 [connection signal="pressed" from="QuestionList/VBoxContainer/CenterContainer/AddCat" to="." method="_on_add_cat_pressed"]
+[connection signal="pressed" from="CategoryInfo/Export" to="." method="_on_export_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ImportButton" to="ImportCat" method="_on_import_button_pressed"]
+[connection signal="pressed" from="ImportCat/SubmitImport" to="ImportCat" method="_on_submit_import_pressed"]
+[connection signal="pressed" from="ImportCat/CloseBtn" to="ImportCat" method="_on_close_btn_pressed"]
