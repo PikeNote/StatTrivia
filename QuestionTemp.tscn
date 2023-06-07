@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dy04j4p55wsa6"]
+[gd_scene load_steps=11 format=3 uid="uid://dy04j4p55wsa6"]
 
 [ext_resource type="Script" path="res://QuestionTemp.gd" id="1_3ge0g"]
 [ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="2_66jwl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gdf14es3m6rb" path="res://Color 5/Button_Green.png" id="4_bluoo"]
 [ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="4_x6ost"]
 [ext_resource type="Texture2D" uid="uid://niqisen1qayq" path="res://assets/Circle_Button.png" id="5_3o0lw"]
+[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="7_ur2nk"]
 
 [sub_resource type="Animation" id="Animation_cjcsd"]
 length = 0.001
@@ -318,5 +319,8 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_0e650")
 }
+
+[node name="Transitioner" type="Node" parent="."]
+script = ExtResource("7_ur2nk")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

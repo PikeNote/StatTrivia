@@ -186,6 +186,7 @@ script = ExtResource("9_h28i5")
 
 [node name="Label2" type="Label" parent="CategoryInfo/Export"]
 visible = false
+layout_mode = 0
 offset_left = -64.0
 offset_top = 118.0
 offset_right = 122.0
@@ -276,6 +277,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CloseBtn" type="TextureButton" parent="ImportCat"]
+layout_mode = 0
 offset_left = 1468.0
 offset_top = 285.0
 offset_right = 1558.0

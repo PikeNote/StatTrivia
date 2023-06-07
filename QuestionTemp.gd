@@ -5,11 +5,13 @@ var currentQuestion = 0;
 var correctAnswer = 0;
 var labels = [];
 
+
 var correct_btn = load("res://Color 5/Button_Green.png");
 var wrong_btn = load("res://Color 5/Button_Red.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	QuestionData.questions = [];
 	randomize();
 	_resetVisiblity();
 	for button in $GridContainer.get_children():
@@ -78,17 +80,23 @@ func _process(delta):
 
 
 func _on_button_pressed(btn):
-	if(btn.get_child(1) == labels[correctAnswer]):
-		btn.get_child(0).texture = correct_btn
-		correctAnswer += 1;
-	else:
-		btn.get_child(0).texture = wrong_btn;
-		var correct = $GridContainer.get_child(correctAnswer).get_child(0)
-		correct.visible = true;
-		correct.texture = correct_btn
-		pass
-	btn.get_child(0).visible = true;
-	$AnimationPlayer.play("expandingRect");
+	if(not $AnimationPlayer.is_playing()):
+		var ques_data = questions[currentQuestion]
+		if(btn.get_child(1) == labels[correctAnswer]):
+			btn.get_child(0).texture = correct_btn
+			correctAnswer += 1;
+			ques_data["answered_correct"] = true;
+			
+		else:
+			btn.get_child(0).texture = wrong_btn;
+			var correct = $GridContainer.get_child(correctAnswer).get_child(0)
+			correct.visible = true;
+			correct.texture = correct_btn
+			ques_data["answered_correct"] = false;
+			ques_data["wrong_ind"] = ques_data["options"].find(btn.get_child(1).text);
+		QuestionData.questions.append(ques_data);
+		btn.get_child(0).visible = true;
+		$AnimationPlayer.play("expandingRect");
 	
 		
 
@@ -97,10 +105,12 @@ func _on_animation_player_animation_finished(anim_name):
 	if(currentQuestion < questions.size()-1):
 		currentQuestion += 1;
 		_setQuestion(currentQuestion);
+	else:
+		$Transitioner.transition_scene(self, "res://Presets/QuestionReview.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.RIGHT)
 	$AnimationPlayer.seek(0,true);
 	_updateQuestionProgress();
 	_resetVisiblity();
-	pass # Replace with function body.
+	
 
 func _updateQuestionProgress():
 	$QuestionCount/QuestionNumber.text = str(currentQuestion+1) + "/" + str(questions.size())
