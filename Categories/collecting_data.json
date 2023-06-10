@@ -1,0 +1,116 @@
+{
+    "description":"Default",
+    "name":"Collecting Data",
+    "questions":[
+       {
+          "correct":0,
+          "image_data":"",
+          "options":[
+             "Simple random sampling",
+             "Cluster sampling",
+             "Stratified random sampling",
+             "Systematic sampling"
+          ],
+          "question":"A new local business wants to estimate the proportion of customers who are satisfied with their service. They randomly selected 25 customers every day for a week and asked about their satisfaction based on a five star scale. Which of the following best describes this sampling method?"
+       },
+       {
+          "correct":1,
+          "image_data":"",
+          "options":[
+             "Simple random sampling ",
+             "Cluster sampling",
+             "Stratified random sampling",
+             "Systematic sampling"
+          ],
+          "question":"A gardener wants to know which type of fertilizer would be best to grow their garden in different conditions such as soil type, sunlight exposure, and plant types. Which sampling method is best? "
+       },
+       {
+          "correct":1,
+          "image_data":"",
+          "options":[
+             "Stratified sampling",
+             "Cluster sampling",
+             "Simple random sampling",
+             "Systematic sampling"
+          ],
+          "question":"Which of the following sampling methods provides an equal chance of being selected?\n"
+       },
+       {
+          "correct":3,
+          "image_data":"",
+          "options":[
+             "Simulation",
+             "Census",
+             "Observational study",
+             "Experimental study"
+          ],
+          "question":"A researcher wants to compare the effectiveness of caffeine when exercising. The researcher randomly assigns 50 participants to have caffeine and another 50 participants who won’t have caffeine. What type of study is this?"
+       },
+       {
+          "correct":2,
+          "image_data":"",
+          "options":[
+             "Students who do receive the incentive but score lower than a 95",
+             "Students who do not receive the incentive who scored a 95 or higher",
+             "Students who receive a different exam but scored a 95 or higher",
+             "Students who do receive the incentive for scoring a 95 or higher"
+          ],
+          "question":"A professor wants to know if students will study more by providing an incentive for those who can pass the next exam with a 95 or higher. What would be an appropriate control group for this experimental study?"
+       },
+       {
+          "correct":0,
+          "image_data":"",
+          "options":[
+             "Observational study",
+             "Survey",
+             "Experimental study",
+             "Simulation"
+          ],
+          "question":"A researcher wants to investigate the relationship between income and education level. Which type of study design is best?"
+       },
+       {
+          "correct":3,
+          "image_data":"",
+          "options":[
+             "Simple random sampling",
+             "Cluster sampling",
+             "Stratified random sampling",
+             "Systematic sampling"
+          ],
+          "question":"A donut shop owner wants to figure out which new flavor to sell next week. The owner asks every tenth person who orders in the shop. What type of sampling technique is this?"
+       },
+       {
+          "correct":2,
+          "image_data":"",
+          "options":[
+             "Simple random sampling",
+             "Cluster sampling",
+             "Stratified random sampling",
+             "Systematic sampling"
+          ],
+          "question":"A group of cafeteria ladies wants to know if the new lunch menu is effective for all students from each grade at the middle school in a district. Which sampling will accurately represent the population they are trying to study?"
+       },
+       {
+          "correct":1,
+          "image_data":"",
+          "options":[
+             "Observational study",
+             "Matched pairs experiment",
+             "Double-blind experiment",
+             "A randomized controlled experiment"
+          ],
+          "question":"A researcher wants to conduct an experiment on whether or not coffee enthusiasts can identify between Starbucks and Dunkin donuts coffee. Participants are randomly assigned to either have a coffee from Starbucks or Dunkin. The researcher will also not know what coffee the participant receives. This is an example of:"
+       },
+       {
+          "correct":0,
+          "image_data":"",
+          "options":[
+             "Eliminate confounding variables",
+             "Ensure random sampling",
+             "Increase power",
+             "Provides a larger sample size"
+          ],
+          "question":"Which of the following is a main advantage of using matched pairs design?"
+       }
+    ]
+ }

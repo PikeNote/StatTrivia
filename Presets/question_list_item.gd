@@ -11,9 +11,9 @@ func _ready():
 
 func setData(d):
 	data = d;
-	if(!data["answered_correct"]):
+	if(data.has("wrong_ind")):
 		$CorrectWrong.texture = load("res://Color 5/x.png")
-	$QuestionTitle.text = data["question"];
+	$QuestionTitle.text = data["question"].replace("\n", "");
 	
 func getData():
 	return data;

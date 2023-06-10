@@ -4,10 +4,11 @@ var active = false;
 
 # Template
 var data = {
-	"name":"",
-	"description":"",
+	"name":"Your new category",
+	"description":"Describe what you are making!",
 	"questions":[
-	]
+	],
+	"time_created":0
 }
 
 var path = "";
@@ -16,6 +17,8 @@ func load(ob):
 	data = ob;
 	$Label.text = data["name"];
 	
+func setCurrentTime():
+	data["time_created"] = Time.get_unix_time_from_system();
 
 func set_filePath(p):
 	path = p;
@@ -58,7 +61,9 @@ func _setText(s):
 
 func _on_delete_button_pressed():
 	DirAccess.remove_absolute(path);
+	get_tree().get_root().get_node("CategoryManagement").resetSelect();
 	$".".queue_free();
+	
 
 func _on_edit_button_pressed():
 	EditCategory.data = data;

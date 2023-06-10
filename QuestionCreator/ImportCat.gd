@@ -17,10 +17,8 @@ func _on_close_btn_pressed():
 
 
 func _on_submit_import_pressed():
-	var jsonAttempt = PackedByteArray(JSON.parse_string($TextEdit.text));
-	print(jsonAttempt)
-	jsonAttempt = jsonAttempt.decompress_dynamic(-1,3);
-	$"..".importCat(JSON.parse_string(bytes_to_var(jsonAttempt)))
+	var jsonAttempt = JSON.parse_string($TextEdit.text);
+	$"..".importCat(jsonAttempt)
 	visible = false;
 
 func _on_import_button_pressed():

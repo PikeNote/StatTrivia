@@ -14,6 +14,9 @@ var currentQuestionInd;
 var checkNormal = load("res://assets/Check_Button.PNG");
 var checkGreen = load("res://assets/Green_Check_Button.PNG");
 
+@onready var scrollbar = $QuestionList/VBoxContainer/QuestionBox.get_v_scroll_bar();
+var scrollbarBase = 0;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -27,6 +30,13 @@ func _ready():
 		
 	for option in $QuestionSetup/CorrectButton.get_children():
 		option.pressed.connect(correct_answer_pressed.bind(option));
+	
+	scrollbar.changed.connect(handle_scrollbar_changed);
+
+func handle_scrollbar_changed():
+	if(scrollbarBase < scrollbar.max_value):
+		$QuestionList/VBoxContainer/QuestionBox.scroll_vertical = scrollbar.max_value
+	scrollbarBase = scrollbar.max_value;
 
 func _on_texture_rect_pressed():
 	$FileDialog.show();
@@ -35,6 +45,14 @@ func _on_texture_rect_pressed():
 func resetSel():
 	for option in $QuestionSetup/CorrectButton.get_children():
 		option.texture_normal = checkNormal;
+
+func resetSelect():
+	_on_button_1_pressed();
+	var i = 0;
+	for bt in $QuestionList/VBoxContainer/QuestionBox/VBoxContainer.get_children():
+		if(not bt.is_queued_for_deletion()):
+			bt._setText("Question #"+str(i+1));
+			i+=1;
 
 func _on_file_dialog_file_selected(path):
 	$QuestionSetup/ImageRect/TextureRect.visible = false;
@@ -47,7 +65,7 @@ func _on_file_dialog_file_selected(path):
 	texture.set_image(image)
 	
 	var file = FileAccess.open(path, FileAccess.READ);
-	currentQuestion.setImage(Marshalls.raw_to_base64(file.get_buffer(file.get_length())));
+	currentQuestion.setImage(Array(image.save_jpg_to_buffer(0.4).compress(3)));
 	
 	$QuestionSetup/ImageRect.texture_normal = texture;
 
@@ -75,7 +93,7 @@ func _on_add_cat_pressed():
 	currentQuestion.pressed.connect(_questionBtnClick.bind(currentQuestion));
 	
 	_questionBtnClick(currentQuestion);
-	
+
 func add_question():
 	pass;
 	
@@ -101,9 +119,9 @@ func _questionBtnClick(btn):
 	var data = btn.getData();
 	$QuestionSetup/TextEdit.text = data["question"];
 	
-	if(data["image_data"] != ""):
+	if(data.has("image_data") && len(data["image_data"]) != 0):
 		var image = Image.new();
-		image.load_png_from_buffer(Marshalls.base64_to_raw(data["image_data"]));
+		image.load_jpg_from_buffer(PackedByteArray(data["image_data"]).decompress_dynamic(-1,3));
 		var image_texture = ImageTexture.new();
 		image_texture.set_image(image);
 		$QuestionSetup/ImageRect.texture_normal = image_texture
@@ -148,6 +166,23 @@ func _on_line_edit_text_changed(new_text):
 	EditCategory.data["name"] = new_text;
 
 func _on_line_edit_lines_edited_from(from_line, to_line):
+	if(to_line-from_line == 4):
+		var txt = $QuestionSetup/GridContainer/Button1/LineEdit.text.split("\n",false);
+		var i = 0;
+		
+		for option in txt:
+			if(i+1==txt.size()):
+				var tempText = "";
+				for x in range(i,txt.size()-1):
+					tempText += txt[x] + "\n"
+				tempText += txt[txt.size()-1];
+				$QuestionSetup/GridContainer.get_child(i).get_child(0).text = tempText;
+				_option_changed(i);
+			else:
+				$QuestionSetup/GridContainer.get_child(i).get_child(0).text = option
+				_option_changed(i);
+			
+			i+=1;
 	pass # Replace with function body.
 
 func _on_text_edit_text_changed():
@@ -189,3 +224,10 @@ func correct_answer_pressed(btn:TextureButton):
 	btn.texture_normal = checkGreen;
 
 
+
+
+func _on_remove_image_pressed():
+	if(currentQuestion != null):
+		currentQuestion.setImage([]);
+		$QuestionSetup/ImageRect.texture_normal = null;
+		$QuestionSetup/ImageRect/TextureRect.visible = true;

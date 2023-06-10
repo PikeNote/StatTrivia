@@ -13,6 +13,13 @@ func _ready():
 	randomize();
 	_loadDir("res://Categories//");
 
+func reloadCat():
+	categories={};
+	categoriesList=[];
+	activeCategories=[];
+	_loadDir("res://Categories//");
+	_loadDir("user://categories//");
+
 func _loadDir(d):
 	var dir = DirAccess.open(d);
 	if dir:
@@ -33,10 +40,11 @@ func _loadDir(d):
 
 func _randomQuestion(category, count):
 	var randomQuestions = []
-	var cat_questions = categories[category];
+	var cat_questions = categories[category]["questions"].duplicate(true);
 	for x in range(count):
-		var ranQues = cat_questions["questions"][randi()%cat_questions["questions"].size()]
-		cat_questions.erase(ranQues);
+		var randInd = randi()%cat_questions.size();
+		var ranQues = cat_questions[randInd]
+		cat_questions.remove_at(randInd);
 		randomQuestions.append(ranQues);
 	return randomQuestions;
 # Called every frame. 'delta' is the elapsed time since the previous frame.

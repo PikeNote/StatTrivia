@@ -4,7 +4,7 @@ var active = false;
 
 var data = {
 	"question":"",
-	"image_data":"",
+	"image_data":[],
 	"options":[
 		"",
 		"",
@@ -22,7 +22,6 @@ func setQuestion(s):
 	data["question"] = s;
 	
 func setOptions(i,s):
-	print("set")
 	data["options"][i] = s;
 	
 func setCorrect(s):
@@ -56,4 +55,5 @@ func _setText(s):
 
 func _on_delete_button_pressed():
 	$".".queue_free();
+	get_tree().get_root().get_node("CategoryCreation").resetSelect();
 

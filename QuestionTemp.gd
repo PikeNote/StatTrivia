@@ -25,7 +25,7 @@ func _ready():
 	
 	for cat in Categories.activeCategories:
 		questions = questions + Categories._randomQuestion(cat,numberOfQuestions);
-		
+	questions.shuffle();
 	#questions = Categories._randomQuestion("One Variable Data",5);
 	
 	for i in range(remainder):
@@ -51,7 +51,7 @@ func _setQuestion(s):
 	if(question_data.has("image_data") && question_data["image_data"] != ""):
 		
 		var image = Image.new();
-		image.load_png_from_buffer(Marshalls.base64_to_raw(question_data["image_data"]));
+		image.load_jpg_from_buffer(PackedByteArray(question_data["image_data"]));
 		var image_texture = ImageTexture.new();
 		image_texture.set_image(image);
 		$ImageQuestion/image.texture = image_texture
@@ -59,13 +59,14 @@ func _setQuestion(s):
 		$question_text.visible = false;
 		$ImageQuestion.visible = true;
 	else:
+		$question_text.visible = true;
+		$ImageQuestion.visible = false;
 		$question_text.text = question_data["question"];
 	
 	var randomCorrect = randi() % 4;
-	print(question_data["options"])
 	labels[randomCorrect].text = question_data["options"][question_data["correct"]];
 	correctAnswer = randomCorrect;
-	
+	question_data["options"].erase(labels[randomCorrect].text);
 	for x in range(4):
 		if(x != randomCorrect):
 			var rand_answer = question_data["options"][randi() % question_data["options"].size()];
@@ -82,17 +83,16 @@ func _process(delta):
 func _on_button_pressed(btn):
 	if(not $AnimationPlayer.is_playing()):
 		var ques_data = questions[currentQuestion]
-		if(btn.get_child(1) == labels[correctAnswer]):
+		print(btn.get_index());
+		print(correctAnswer)
+		if(btn.get_index() == correctAnswer):
 			btn.get_child(0).texture = correct_btn
 			correctAnswer += 1;
-			ques_data["answered_correct"] = true;
-			
 		else:
 			btn.get_child(0).texture = wrong_btn;
 			var correct = $GridContainer.get_child(correctAnswer).get_child(0)
 			correct.visible = true;
 			correct.texture = correct_btn
-			ques_data["answered_correct"] = false;
 			ques_data["wrong_ind"] = ques_data["options"].find(btn.get_child(1).text);
 		QuestionData.questions.append(ques_data);
 		btn.get_child(0).visible = true;

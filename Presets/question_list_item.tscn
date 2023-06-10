@@ -13,13 +13,14 @@ stretch_mode = 0
 script = ExtResource("2_ksa0u")
 
 [node name="QuestionTitle" type="Label" parent="."]
+clip_contents = true
 layout_mode = 0
-offset_left = 22.3464
-offset_right = 1272.35
-offset_bottom = 117.0
+offset_left = 22.0
+offset_right = 1272.0
+offset_bottom = 113.0
 theme_override_fonts/font = ExtResource("2_if7pw")
 theme_override_font_sizes/font_size = 50
-text = "1) Some question here that is super important that is really longasdasdas"
+text = "1) Some question here that is super important that is really long"
 vertical_alignment = 1
 clip_text = true
 text_overrun_behavior = 3

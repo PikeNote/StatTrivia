@@ -29,18 +29,24 @@ func buttonCatPressed(btn):
 		$ShowQuestion/question_text.text = data["question"];
 	
 	var i = 0;
-	
 	for option in data["options"]:
-		$ShowQuestion/GridContainer.get_child(i).text = option;
+		$ShowQuestion/GridContainer.get_child(i).get_child(0).visible = false;
+		$ShowQuestion/GridContainer.get_child(i).get_child(1).text = option;
+		i+=1;
 	
 	if(data.has("wrong_ind")):
 		var wrongColorRect = $ShowQuestion/GridContainer.get_child(data["wrong_ind"]).get_child(0);
+		print(data["wrong_ind"])
 		wrongColorRect.texture = wrong_btn;
 		wrongColorRect.visible = true;
-
+	
+	print(data["correct"])
 	var correctOptionRect = $ShowQuestion/GridContainer.get_child(data["correct"]).get_child(0)
-	correctOptionRect.visible = true;
+	
 	correctOptionRect.texture = correct_btn;
+	correctOptionRect.visible = true;
+	
+	print(correctOptionRect.visible)
 	
 	$ShowQuestion.visible = true;
 	

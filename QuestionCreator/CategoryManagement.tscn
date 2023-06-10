@@ -127,6 +127,7 @@ theme_override_fonts/font = ExtResource("5_jje6y")
 theme_override_font_sizes/font_size = 50
 text = "Insert Title Here"
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Label3" type="Label" parent="CategoryInfo"]
 layout_mode = 0

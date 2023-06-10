@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dy04j4p55wsa6"]
+[gd_scene load_steps=12 format=3 uid="uid://dy04j4p55wsa6"]
 
 [ext_resource type="Script" path="res://QuestionTemp.gd" id="1_3ge0g"]
 [ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="2_66jwl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gdf14es3m6rb" path="res://Color 5/Button_Green.png" id="4_bluoo"]
 [ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="4_x6ost"]
 [ext_resource type="Texture2D" uid="uid://niqisen1qayq" path="res://assets/Circle_Button.png" id="5_3o0lw"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_c8sfd"]
 [ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="7_ur2nk"]
 
 [sub_resource type="Animation" id="Animation_cjcsd"]
@@ -160,7 +161,8 @@ offset_left = 16.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -186,7 +188,8 @@ offset_left = 18.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -212,7 +215,8 @@ offset_left = 18.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -238,7 +242,8 @@ offset_left = 18.0
 offset_top = 20.0
 offset_right = 583.0
 offset_bottom = 115.0
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -260,6 +265,7 @@ offset_top = -54.0
 offset_right = 1072.0
 offset_bottom = 211.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c8sfd")
 theme_override_font_sizes/font_size = 30
 text = "dasdasdsa"
 horizontal_alignment = 1
@@ -283,7 +289,8 @@ offset_top = 107.0
 offset_right = 1648.0
 offset_bottom = 691.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 51
+theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_font_sizes/font_size = 40
 text = "dasdasdsa"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -310,7 +317,8 @@ offset_top = 15.0
 offset_right = 131.0
 offset_bottom = 132.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_font_sizes/font_size = 40
 text = "1/10"
 horizontal_alignment = 1
 vertical_alignment = 1
