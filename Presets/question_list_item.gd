@@ -14,7 +14,7 @@ func setData(d):
 	if(data.has("wrong_ind")):
 		$CorrectWrong.texture = load("res://Color 5/x.png")
 	$QuestionTitle.text = data["question"].replace("\n", "");
-	
+	$CategoryTag/Label.text = data["category_origin"];
 func getData():
 	return data;
 

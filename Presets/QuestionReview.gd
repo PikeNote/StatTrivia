@@ -16,9 +16,9 @@ func _ready():
 
 func buttonCatPressed(btn):
 	var data = btn.getData();
-	if(data.has("image_data") && data["image_data"] != ""):
+	if(data.has("image_data") && len(data["image_data"]) != 0):
 		var image = Image.new();
-		image.load_png_from_buffer(Marshalls.base64_to_raw(data["image_data"]));
+		image.load_jpg_from_buffer(PackedByteArray(data["image_data"]).decompress_dynamic(-1,3));
 		var image_texture = ImageTexture.new();
 		image_texture.set_image(image);
 		$ShowQuestion/ImageQuestion/image.texture = image_texture

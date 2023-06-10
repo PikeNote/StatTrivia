@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw1eb3ppnej3y"]
+[gd_scene load_steps=6 format=3 uid="uid://dw1eb3ppnej3y"]
 
 [ext_resource type="Texture2D" uid="uid://b8xw57iufs06d" path="res://Color 5/Button2.png" id="1_do7fj"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="2_if7pw"]
 [ext_resource type="Script" path="res://Presets/question_list_item.gd" id="2_ksa0u"]
 [ext_resource type="Texture2D" uid="uid://bpr6nwho4dn82" path="res://Color 5/check.png" id="3_bxm44"]
+[ext_resource type="Texture2D" uid="uid://dkt3fiqmjtev2" path="res://assets/Squircle_Button.png" id="5_wi1n6"]
 
 [node name="QuestionListItem" type="TextureButton"]
 custom_minimum_size = Vector2(1420, 120)
@@ -17,7 +18,7 @@ clip_contents = true
 layout_mode = 0
 offset_left = 22.0
 offset_right = 1272.0
-offset_bottom = 113.0
+offset_bottom = 84.0
 theme_override_fonts/font = ExtResource("2_if7pw")
 theme_override_font_sizes/font_size = 50
 text = "1) Some question here that is super important that is really long"
@@ -33,3 +34,25 @@ offset_right = 1391.0
 offset_bottom = 106.0
 texture = ExtResource("3_bxm44")
 expand_mode = 1
+
+[node name="CategoryTag" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 66.0
+offset_right = 486.0
+offset_bottom = 114.0
+texture = ExtResource("5_wi1n6")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CategoryTag"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 437.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("2_if7pw")
+theme_override_font_sizes/font_size = 20
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3

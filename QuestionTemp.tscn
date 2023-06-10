@@ -158,15 +158,16 @@ expand_mode = 1
 [node name="Label" type="Label" parent="GridContainer/Button1"]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 20.0
+offset_top = 7.0
 offset_right = 583.0
-offset_bottom = 115.0
+offset_bottom = 134.0
 theme_override_fonts/font = ExtResource("5_c8sfd")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+clip_text = true
 
 [node name="Button2" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
@@ -185,15 +186,16 @@ expand_mode = 1
 [node name="Label" type="Label" parent="GridContainer/Button2"]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 20.0
+offset_top = 6.0
 offset_right = 583.0
-offset_bottom = 115.0
+offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("5_c8sfd")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+clip_text = true
 
 [node name="Button3" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
@@ -212,15 +214,16 @@ expand_mode = 1
 [node name="Label" type="Label" parent="GridContainer/Button3"]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 20.0
+offset_top = 7.0
 offset_right = 583.0
-offset_bottom = 115.0
+offset_bottom = 135.0
 theme_override_fonts/font = ExtResource("5_c8sfd")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+clip_text = true
 
 [node name="Button4" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
@@ -239,15 +242,16 @@ expand_mode = 1
 [node name="Label" type="Label" parent="GridContainer/Button4"]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 20.0
+offset_top = 7.0
 offset_right = 583.0
-offset_bottom = 115.0
+offset_bottom = 134.0
 theme_override_fonts/font = ExtResource("5_c8sfd")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+clip_text = true
 
 [node name="ImageQuestion" type="Control" parent="."]
 visible = false

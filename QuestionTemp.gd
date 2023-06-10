@@ -24,12 +24,17 @@ func _ready():
 	var remainder = GameManager.total_questions % Categories.activeCategories.size();
 	
 	for cat in Categories.activeCategories:
-		questions = questions + Categories._randomQuestion(cat,numberOfQuestions);
+		var randomCatQuestion = Categories._randomQuestion(cat,numberOfQuestions);
+		for i in range(randomCatQuestion.size()):
+			randomCatQuestion[i]["category_origin"] = cat;
+		questions += randomCatQuestion;
 	questions.shuffle();
 	#questions = Categories._randomQuestion("One Variable Data",5);
 	
 	for i in range(remainder):
-		questions.append(generateUniqueQues());
+		var uniqueQues = generateUniqueQues();
+		uniqueQues[0]["category_origin"] = uniqueQues[1];
+		questions.append(uniqueQues[0]);
 	
 	
 	_setQuestion(currentQuestion);
@@ -39,19 +44,20 @@ func _ready():
 	pass # Replace with function body.
 
 func generateUniqueQues():
-	var randQuestion = Categories._randomQuestion(Categories.activeCategories[randi() % Categories.activeCategories.size()],1);
+	var randomCat = Categories.activeCategories[randi() % Categories.activeCategories.size()];
+	var randQuestion = Categories._randomQuestion(randomCat,1);
 	while questions.has(randQuestion[0]):
-		randQuestion = Categories._randomQuestion(Categories.activeCategories[randi() % Categories.activeCategories.size()],1);
-	return randQuestion[0];
+		randQuestion = Categories._randomQuestion(randomCat,1);
+	return [randQuestion[0],randomCat];
 
 func _setQuestion(s):
 	var question_data = questions[s].duplicate(true);
 	
 	
-	if(question_data.has("image_data") && question_data["image_data"] != ""):
+	if(question_data.has("image_data") && len(question_data["image_data"]) != 0):
 		
 		var image = Image.new();
-		image.load_jpg_from_buffer(PackedByteArray(question_data["image_data"]));
+		image.load_jpg_from_buffer(PackedByteArray(question_data["image_data"]).decompress_dynamic(-1,3));
 		var image_texture = ImageTexture.new();
 		image_texture.set_image(image);
 		$ImageQuestion/image.texture = image_texture
@@ -83,8 +89,6 @@ func _process(delta):
 func _on_button_pressed(btn):
 	if(not $AnimationPlayer.is_playing()):
 		var ques_data = questions[currentQuestion]
-		print(btn.get_index());
-		print(correctAnswer)
 		if(btn.get_index() == correctAnswer):
 			btn.get_child(0).texture = correct_btn
 			correctAnswer += 1;
