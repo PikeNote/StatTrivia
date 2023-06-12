@@ -69,7 +69,7 @@ func _on_edit_button_pressed():
 	EditCategory.data = data;
 	EditCategory.path = path;
 	EditCategory.currentCat = $".".get_index();
-	get_node('/root/CategoryManagement/Transitioner').transition_scene(self, "res://QuestionCreator/CategoryCreation.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.RIGHT)
+	get_node('/root/CategoryManagement/Transition').transition("res://Screens/QuestionCreator/CategoryCreation.tscn")
 
 	
 	

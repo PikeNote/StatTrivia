@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://deo1v83g2x8si"]
+[gd_scene load_steps=15 format=3 uid="uid://deo1v83g2x8si"]
 
-[ext_resource type="Script" path="res://Presets/QuestionReview.gd" id="1_hh0ba"]
+[ext_resource type="Script" path="res://Screens/QuestionReview.gd" id="1_hh0ba"]
 [ext_resource type="Texture2D" uid="uid://dvqc2edmlw64a" path="res://assets/Rob_Top_Right.PNG" id="1_hipck"]
-[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_opiq7"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="3_beeww"]
+[ext_resource type="BitMap" uid="uid://cragpbqrchl" path="res://assets/Squircle_Button_Mask.png" id="4_7ovrx"]
+[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://assets/Panel 8.png" id="6_1glk6"]
 [ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="6_ud0sb"]
-[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="7_xaaes"]
 [ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="9_txw0r"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://assets/Button 1.png" id="10_t8nkg"]
 [ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="10_vh3lk"]
 [ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="11_0l3qv"]
 [ext_resource type="Script" path="res://Presets/HoverButton.gd" id="12_1rh86"]
 [ext_resource type="Texture2D" uid="uid://dkt3fiqmjtev2" path="res://assets/Squircle_Button.png" id="13_020ya"]
-[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="13_e1pki"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Transition/Transition.tscn" id="13_e1pki"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahb01"]
 bg_color = Color(1, 1, 1, 1)
@@ -44,6 +45,7 @@ offset_top = 55.0
 offset_right = 673.0
 offset_bottom = 165.0
 texture_normal = ExtResource("13_020ya")
+texture_click_mask = ExtResource("4_7ovrx")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("12_1rh86")
@@ -68,6 +70,7 @@ offset_top = 55.0
 offset_right = 1305.0
 offset_bottom = 165.0
 texture_normal = ExtResource("13_020ya")
+texture_click_mask = ExtResource("4_7ovrx")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("12_1rh86")
@@ -90,7 +93,7 @@ offset_left = 52.0
 offset_top = 193.0
 offset_right = 1578.0
 offset_bottom = 1033.0
-texture = ExtResource("2_opiq7")
+texture = ExtResource("6_1glk6")
 expand_mode = 1
 
 [node name="OverviewLabel" type="Label" parent="."]
@@ -227,7 +230,7 @@ columns = 2
 [node name="Button1" type="TextureButton" parent="ShowQuestion/GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("7_xaaes")
+texture_normal = ExtResource("10_t8nkg")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="ShowQuestion/GridContainer/Button1"]
@@ -262,7 +265,7 @@ autowrap_mode = 3
 [node name="Button2" type="TextureButton" parent="ShowQuestion/GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("7_xaaes")
+texture_normal = ExtResource("10_t8nkg")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="ShowQuestion/GridContainer/Button2"]
@@ -297,7 +300,7 @@ autowrap_mode = 3
 [node name="Button3" type="TextureButton" parent="ShowQuestion/GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("7_xaaes")
+texture_normal = ExtResource("10_t8nkg")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="ShowQuestion/GridContainer/Button3"]
@@ -332,7 +335,7 @@ autowrap_mode = 3
 [node name="Button4" type="TextureButton" parent="ShowQuestion/GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("7_xaaes")
+texture_normal = ExtResource("10_t8nkg")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="ShowQuestion/GridContainer/Button4"]

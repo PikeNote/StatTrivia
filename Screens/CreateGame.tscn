@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://gmqt75oh4vj0"]
 
-[ext_resource type="Texture2D" uid="uid://dvqc2edmlw64a" path="res://assets/Rob_Top_Right.PNG" id="1_7te4t"]
-[ext_resource type="Script" path="res://CreateGame.gd" id="1_07vuu"]
-[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="2_5g8so"]
-[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_b7clh"]
-[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="4_3dar7"]
-[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="5_5knrp"]
-[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="7_6ux6i"]
-[ext_resource type="Texture2D" uid="uid://bahpioa2fri4r" path="res://assets/Play_Button.PNG" id="7_uf06y"]
-[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="8_6jhb1"]
-[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="10_vc8bk"]
+[ext_resource type="Script" path="res://Screens/CreateGame.gd" id="1_kl0xk"]
+[ext_resource type="Texture2D" uid="uid://dvqc2edmlw64a" path="res://assets/Rob_Top_Right.PNG" id="2_lxyxl"]
+[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://assets/Panel 8.png" id="3_sldrd"]
+[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://assets/Panel 2.png" id="4_mhm4s"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_s2eov"]
+[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="6_what2"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="7_3wc4q"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="8_hphdn"]
+[ext_resource type="Texture2D" uid="uid://bahpioa2fri4r" path="res://assets/Play_Button.PNG" id="9_8tjl3"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="10_5li0w"]
 
 [node name="CreateGame" type="Control"]
 layout_mode = 3
@@ -19,11 +19,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_07vuu")
+script = ExtResource("1_kl0xk")
 
 [node name="RobTopRight" type="TextureRect" parent="."]
 layout_mode = 0
-texture = ExtResource("1_7te4t")
+texture = ExtResource("2_lxyxl")
 
 [node name="Panel8" type="TextureRect" parent="."]
 layout_mode = 0
@@ -32,7 +32,7 @@ offset_top = 47.0
 offset_right = 1237.0
 offset_bottom = 694.0
 scale = Vector2(0.795918, 0.699382)
-texture = ExtResource("2_b7clh")
+texture = ExtResource("3_sldrd")
 
 [node name="Panel2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -41,7 +41,7 @@ offset_top = 509.0
 offset_right = 546.0
 offset_bottom = 1158.0
 scale = Vector2(0.889723, 0.809904)
-texture = ExtResource("2_5g8so")
+texture = ExtResource("4_mhm4s")
 
 [node name="Panel3" type="TextureRect" parent="."]
 layout_mode = 0
@@ -50,7 +50,7 @@ offset_top = 507.0
 offset_right = 1043.0
 offset_bottom = 1156.0
 scale = Vector2(0.889723, 0.809904)
-texture = ExtResource("2_5g8so")
+texture = ExtResource("4_mhm4s")
 
 [node name="CustomizerTitle" type="Label" parent="."]
 layout_mode = 0
@@ -58,7 +58,7 @@ offset_left = 71.0
 offset_top = 40.0
 offset_right = 991.0
 offset_bottom = 126.0
-theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_fonts/font = ExtResource("5_s2eov")
 theme_override_font_sizes/font_size = 60
 text = "Game Customizer"
 horizontal_alignment = 1
@@ -70,7 +70,7 @@ offset_left = 67.0
 offset_top = 506.0
 offset_right = 486.0
 offset_bottom = 592.0
-theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_fonts/font = ExtResource("5_s2eov")
 theme_override_font_sizes/font_size = 45
 text = "Inactive Categories"
 horizontal_alignment = 1
@@ -82,7 +82,7 @@ offset_left = 564.0
 offset_top = 506.0
 offset_right = 983.0
 offset_bottom = 592.0
-theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_fonts/font = ExtResource("5_s2eov")
 theme_override_font_sizes/font_size = 45
 text = "Active Categories"
 horizontal_alignment = 1
@@ -94,7 +94,7 @@ offset_left = 1059.0
 offset_top = 189.0
 offset_right = 1521.0
 offset_bottom = 419.0
-theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_fonts/font = ExtResource("5_s2eov")
 theme_override_font_sizes/font_size = 45
 text = "Customize game settings
 via the Game Customizer
@@ -110,7 +110,7 @@ offset_left = 999.0
 offset_top = 512.0
 offset_right = 1597.0
 offset_bottom = 806.0
-theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_fonts/font = ExtResource("5_s2eov")
 theme_override_font_sizes/font_size = 45
 text = "Click items in the ianctive 
 categories section to make them
@@ -128,7 +128,7 @@ offset_top = 891.0
 offset_right = 1861.0
 offset_bottom = 983.0
 theme_override_colors/font_color = Color(0.94902, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_fonts/font = ExtResource("5_s2eov")
 theme_override_font_sizes/font_size = 45
 text = "The number of questions selected cannot be 0."
 vertical_alignment = 1
@@ -140,7 +140,7 @@ offset_left = 105.0
 offset_top = 123.0
 offset_right = 547.0
 offset_bottom = 169.0
-theme_override_fonts/font = ExtResource("4_3dar7")
+theme_override_fonts/font = ExtResource("5_s2eov")
 theme_override_font_sizes/font_size = 45
 text = "Number of questions:"
 
@@ -157,11 +157,11 @@ offset_left = 1031.0
 offset_top = 46.0
 offset_right = 1116.0
 offset_bottom = 131.0
-texture_normal = ExtResource("5_5knrp")
-texture_click_mask = ExtResource("7_6ux6i")
+texture_normal = ExtResource("6_what2")
+texture_click_mask = ExtResource("7_3wc4q")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("8_6jhb1")
+script = ExtResource("8_hphdn")
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -169,11 +169,11 @@ offset_left = 1120.0
 offset_top = 46.0
 offset_right = 1205.0
 offset_bottom = 131.0
-texture_normal = ExtResource("7_uf06y")
-texture_click_mask = ExtResource("7_6ux6i")
+texture_normal = ExtResource("9_8tjl3")
+texture_click_mask = ExtResource("7_3wc4q")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("8_6jhb1")
+script = ExtResource("8_hphdn")
 
 [node name="InactiveScroll" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(30, 100)
@@ -198,7 +198,7 @@ offset_bottom = 1024.0
 custom_minimum_size = Vector2(375, 443)
 layout_mode = 2
 
-[node name="Transition" parent="." instance=ExtResource("10_vc8bk")]
+[node name="Transition" parent="." instance=ExtResource("10_5li0w")]
 
 [connection signal="value_changed" from="InstructionTwo2/LineEdit" to="." method="_on_line_edit_value_changed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

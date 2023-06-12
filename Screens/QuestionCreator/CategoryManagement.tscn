@@ -1,32 +1,32 @@
 [gd_scene load_steps=15 format=3 uid="uid://cifksmccur1w0"]
 
-[ext_resource type="Script" path="res://QuestionCreator/CategoryManagement.tres.gd" id="1_hudu8"]
-[ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_y8slf"]
-[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="3_iorlu"]
-[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="4_vehtt"]
-[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_jje6y"]
-[ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="7_8mamm"]
-[ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="7_hel1h"]
-[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="8_xd732"]
-[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_8j2l1"]
-[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="9_h28i5"]
-[ext_resource type="Texture2D" uid="uid://po1xwhxjdhtt" path="res://assets/Join_Lobby_Button.PNG" id="11_g6lqo"]
-[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="12_04pdu"]
-[ext_resource type="Script" path="res://QuestionCreator/ImportCat.gd" id="12_18rog"]
-[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="14_qvf5o"]
+[ext_resource type="Script" path="res://Screens/QuestionCreator/CategoryManagement.tres.gd" id="1_d8h57"]
+[ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_8glbm"]
+[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://assets/Panel 2.png" id="3_uk0mv"]
+[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://assets/Panel 8.png" id="4_54ewo"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_k8624"]
+[ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://assets/AddIconGray.png" id="6_xvprd"]
+[ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="7_vpvst"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="8_kcysl"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="9_4scqb"]
+[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="10_nouq6"]
+[ext_resource type="Texture2D" uid="uid://po1xwhxjdhtt" path="res://assets/Join_Lobby_Button.PNG" id="11_4emlv"]
+[ext_resource type="Script" path="res://Screens/QuestionCreator/ImportCat.gd" id="12_lodsq"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://assets/Button 1.png" id="13_cmypx"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="14_4eloh"]
 
 [node name="CategoryManagement" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
-script = ExtResource("1_hudu8")
+script = ExtResource("1_d8h57")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -2.0
 offset_right = 1918.0
 offset_bottom = 1080.0
-texture = ExtResource("2_y8slf")
+texture = ExtResource("2_8glbm")
 
 [node name="ListBox" type="TextureRect" parent="."]
 layout_mode = 0
@@ -35,7 +35,7 @@ offset_top = 203.0
 offset_right = 503.0
 offset_bottom = 829.0
 scale = Vector2(1.21998, 1.31949)
-texture = ExtResource("3_iorlu")
+texture = ExtResource("3_uk0mv")
 
 [node name="SettingsBox" type="TextureRect" parent="."]
 layout_mode = 0
@@ -44,7 +44,7 @@ offset_top = 203.0
 offset_right = 1798.0
 offset_bottom = 850.0
 scale = Vector2(1.04422, 1.27589)
-texture = ExtResource("4_vehtt")
+texture = ExtResource("4_54ewo")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -52,7 +52,7 @@ offset_left = 101.0
 offset_top = 222.0
 offset_right = 565.0
 offset_bottom = 303.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 81
 text = "Category List"
 horizontal_alignment = 1
@@ -64,7 +64,7 @@ offset_left = 545.0
 offset_top = -3.0
 offset_right = 1716.0
 offset_bottom = 78.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 81
 text = "Info"
 horizontal_alignment = 1
@@ -99,7 +99,7 @@ layout_mode = 2
 
 [node name="AddCat" type="TextureButton" parent="QuestionList/VBoxContainer/CenterContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_8mamm")
+texture_normal = ExtResource("6_xvprd")
 
 [node name="CategoryInfo" type="Control" parent="."]
 anchors_preset = 0
@@ -113,7 +113,7 @@ offset_left = 661.0
 offset_top = 250.0
 offset_right = 1100.0
 offset_bottom = 336.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 60
 text = "Category Title:"
 vertical_alignment = 1
@@ -123,7 +123,7 @@ layout_mode = 0
 offset_top = 58.0
 offset_right = 1148.0
 offset_bottom = 144.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 50
 text = "Insert Title Here"
 vertical_alignment = 1
@@ -135,7 +135,7 @@ offset_left = 659.0
 offset_top = 400.0
 offset_right = 1098.0
 offset_bottom = 486.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 60
 text = "Category Description:"
 vertical_alignment = 1
@@ -146,7 +146,7 @@ offset_left = 2.0
 offset_top = 64.0
 offset_right = 1150.0
 offset_bottom = 272.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 50
 text = "Insert Descripton Here"
 autowrap_mode = 3
@@ -157,7 +157,7 @@ offset_left = 659.0
 offset_top = 677.0
 offset_right = 1200.0
 offset_bottom = 763.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 60
 text = "Number of Questions:"
 vertical_alignment = 1
@@ -168,7 +168,7 @@ offset_left = 2.0
 offset_top = 64.0
 offset_right = 1150.0
 offset_bottom = 123.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 50
 text = "0"
 autowrap_mode = 3
@@ -179,11 +179,11 @@ offset_left = 1697.0
 offset_top = 261.0
 offset_right = 1817.0
 offset_bottom = 381.0
-texture_normal = ExtResource("7_hel1h")
-texture_click_mask = ExtResource("8_xd732")
+texture_normal = ExtResource("7_vpvst")
+texture_click_mask = ExtResource("8_kcysl")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("9_h28i5")
+script = ExtResource("9_4scqb")
 
 [node name="Label2" type="Label" parent="CategoryInfo/Export"]
 visible = false
@@ -193,7 +193,7 @@ offset_top = 118.0
 offset_right = 122.0
 offset_bottom = 179.0
 theme_override_colors/font_color = Color(0, 0.67451, 0, 1)
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 60
 text = "Copied!"
 horizontal_alignment = 2
@@ -205,11 +205,11 @@ offset_left = 1730.0
 offset_top = 110.0
 offset_right = 1820.0
 offset_bottom = 200.0
-texture_normal = ExtResource("9_8j2l1")
-texture_click_mask = ExtResource("8_xd732")
+texture_normal = ExtResource("10_nouq6")
+texture_click_mask = ExtResource("8_kcysl")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("9_h28i5")
+script = ExtResource("9_4scqb")
 
 [node name="ImportButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -217,18 +217,18 @@ offset_left = 454.0
 offset_top = 939.0
 offset_right = 533.0
 offset_bottom = 1018.0
-texture_normal = ExtResource("11_g6lqo")
-texture_click_mask = ExtResource("8_xd732")
+texture_normal = ExtResource("11_4emlv")
+texture_click_mask = ExtResource("8_kcysl")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("9_h28i5")
+script = ExtResource("9_4scqb")
 
 [node name="ImportCat" type="Control" parent="."]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("12_18rog")
+script = ExtResource("12_lodsq")
 
 [node name="Background" type="TextureRect" parent="ImportCat"]
 layout_mode = 0
@@ -237,7 +237,7 @@ offset_top = 287.0
 offset_right = 1584.0
 offset_bottom = 934.0
 mouse_filter = 0
-texture = ExtResource("4_vehtt")
+texture = ExtResource("4_54ewo")
 
 [node name="Label" type="Label" parent="ImportCat"]
 layout_mode = 0
@@ -245,7 +245,7 @@ offset_left = 438.0
 offset_top = 299.0
 offset_right = 1551.0
 offset_bottom = 369.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 70
 text = "Import Category"
 horizontal_alignment = 1
@@ -264,14 +264,14 @@ offset_left = 813.0
 offset_top = 756.0
 offset_right = 1218.0
 offset_bottom = 858.0
-texture_normal = ExtResource("12_04pdu")
-script = ExtResource("9_h28i5")
+texture_normal = ExtResource("13_cmypx")
+script = ExtResource("9_4scqb")
 
 [node name="Label" type="Label" parent="ImportCat/SubmitImport"]
 layout_mode = 0
 offset_right = 400.0
 offset_bottom = 98.0
-theme_override_fonts/font = ExtResource("5_jje6y")
+theme_override_fonts/font = ExtResource("5_k8624")
 theme_override_font_sizes/font_size = 60
 text = "Submit"
 horizontal_alignment = 1
@@ -283,13 +283,13 @@ offset_left = 1468.0
 offset_top = 285.0
 offset_right = 1558.0
 offset_bottom = 375.0
-texture_normal = ExtResource("9_8j2l1")
-texture_click_mask = ExtResource("8_xd732")
+texture_normal = ExtResource("10_nouq6")
+texture_click_mask = ExtResource("8_kcysl")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("9_h28i5")
+script = ExtResource("9_4scqb")
 
-[node name="Transition" parent="." instance=ExtResource("14_qvf5o")]
+[node name="Transition" parent="." instance=ExtResource("14_4eloh")]
 
 [connection signal="pressed" from="QuestionList/VBoxContainer/CenterContainer/AddCat" to="." method="_on_add_cat_pressed"]
 [connection signal="pressed" from="CategoryInfo/Export" to="." method="_on_export_pressed"]

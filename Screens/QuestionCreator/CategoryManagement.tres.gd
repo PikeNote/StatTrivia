@@ -5,8 +5,6 @@ var category_btn = preload("res://Presets/category_btn.tscn");
 var current_cat = null;
 var cat_ind = -1;
 
-var Msgpack = preload("res://msgpack.gd")
-
 var ascii_letters_and_digits = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 func gen_unique_string(length: int) -> String:
 	var result = ""
@@ -99,7 +97,7 @@ func getUnique():
 	return filePath;
 
 func _on_quit_button_pressed():
-	$Transition.transition("res://Main.tscn")
+	$Transition.transition("res://Screens/MainMenu.tscn")
 	pass # Replace with function body.
 
 func importCat(data):

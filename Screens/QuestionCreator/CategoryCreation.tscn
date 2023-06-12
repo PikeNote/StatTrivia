@@ -1,21 +1,21 @@
 [gd_scene load_steps=18 format=3 uid="uid://cydro44y8ymyk"]
 
-[ext_resource type="Script" path="res://QuestionCreator/CategoryCreation.gd" id="1_8oulb"]
-[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://Color 5/Panel 2.png" id="1_m587t"]
-[ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_6y6pf"]
-[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://Color 5/Panel 8.png" id="2_oac58"]
-[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="4_d7aq7"]
-[ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="6_gus8j"]
-[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="7_s5cbx"]
-[ext_resource type="Texture2D" uid="uid://dcoawopt4k5le" path="res://assets/line.png" id="8_meq8k"]
-[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_qvhyk"]
-[ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="10_buhdk"]
-[ext_resource type="Texture2D" uid="uid://cxwxtr3tdheby" path="res://assets/Check_Button.PNG" id="11_4ed50"]
-[ext_resource type="Texture2D" uid="uid://cetae211hh0m5" path="res://assets/Green_Check_Button.PNG" id="11_fq67n"]
-[ext_resource type="Texture2D" uid="uid://bpnn2xbbqyigb" path="res://assets/IMG_2832.png" id="11_gt37s"]
-[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="12_jlm23"]
-[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="13_eg70p"]
-[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="16_tl05f"]
+[ext_resource type="Script" path="res://Screens/QuestionCreator/CategoryCreation.gd" id="1_hdti0"]
+[ext_resource type="Texture2D" uid="uid://b7byx5cxycxer" path="res://assets/Rob_Top_Left.PNG" id="2_s3j8u"]
+[ext_resource type="Texture2D" uid="uid://k4ld3w7f8ilr" path="res://assets/Panel 2.png" id="3_xvrmb"]
+[ext_resource type="Texture2D" uid="uid://cnkhyl0ftx88p" path="res://assets/Panel 8.png" id="4_mtojn"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_kwjar"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://assets/Button 1.png" id="6_o3iux"]
+[ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://assets/AddIconGray.png" id="7_snpun"]
+[ext_resource type="Texture2D" uid="uid://dcoawopt4k5le" path="res://assets/line.png" id="8_tsg4a"]
+[ext_resource type="Texture2D" uid="uid://cetae211hh0m5" path="res://assets/Green_Check_Button.PNG" id="9_l8332"]
+[ext_resource type="Texture2D" uid="uid://cxwxtr3tdheby" path="res://assets/Check_Button.PNG" id="10_q7yq8"]
+[ext_resource type="Texture2D" uid="uid://bpnn2xbbqyigb" path="res://assets/IMG_2832.png" id="11_0ndl6"]
+[ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="12_2ue6u"]
+[ext_resource type="Script" path="res://Presets/HoverButton.gd" id="13_fnn00"]
+[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="14_jl5nj"]
+[ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="15_awtq2"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="16_4cy6q"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxnxm"]
 
@@ -23,14 +23,14 @@
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
-script = ExtResource("1_8oulb")
+script = ExtResource("1_hdti0")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -2.0
 offset_right = 1918.0
 offset_bottom = 1080.0
-texture = ExtResource("2_6y6pf")
+texture = ExtResource("2_s3j8u")
 
 [node name="ListBox" type="TextureRect" parent="."]
 layout_mode = 0
@@ -39,7 +39,7 @@ offset_top = 203.0
 offset_right = 503.0
 offset_bottom = 829.0
 scale = Vector2(1.21998, 1.31949)
-texture = ExtResource("1_m587t")
+texture = ExtResource("3_xvrmb")
 
 [node name="SettingsBox" type="TextureRect" parent="."]
 layout_mode = 0
@@ -48,7 +48,7 @@ offset_top = 203.0
 offset_right = 1798.0
 offset_bottom = 850.0
 scale = Vector2(1.04422, 1.27589)
-texture = ExtResource("2_oac58")
+texture = ExtResource("4_mtojn")
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
@@ -65,7 +65,7 @@ offset_left = 101.0
 offset_top = 222.0
 offset_right = 565.0
 offset_bottom = 303.0
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 81
 text = "Question List"
 horizontal_alignment = 1
@@ -77,7 +77,7 @@ offset_left = 545.0
 offset_top = -3.0
 offset_right = 1716.0
 offset_bottom = 78.0
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 81
 text = "Settings"
 horizontal_alignment = 1
@@ -97,7 +97,7 @@ offset_left = 103.0
 offset_top = 243.0
 offset_right = 562.0
 offset_bottom = 353.0
-texture_normal = ExtResource("4_d7aq7")
+texture_normal = ExtResource("6_o3iux")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="QuestionList/Button1"]
@@ -106,7 +106,7 @@ offset_left = 10.0
 offset_top = 11.0
 offset_right = 449.0
 offset_bottom = 97.0
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 60
 text = "Category Info"
 horizontal_alignment = 1
@@ -133,7 +133,7 @@ layout_mode = 2
 
 [node name="AddCat" type="TextureButton" parent="QuestionList/VBoxContainer/CenterContainer"]
 layout_mode = 2
-texture_normal = ExtResource("6_gus8j")
+texture_normal = ExtResource("7_snpun")
 
 [node name="Line" type="TextureRect" parent="."]
 layout_mode = 0
@@ -142,7 +142,7 @@ offset_top = 428.0
 offset_right = 307.0
 offset_bottom = 443.0
 scale = Vector2(2.23934, 0.566664)
-texture = ExtResource("8_meq8k")
+texture = ExtResource("8_tsg4a")
 
 [node name="QuestionSetup" type="Control" parent="."]
 anchors_preset = 0
@@ -161,7 +161,7 @@ columns = 2
 [node name="Button1" type="TextureRect" parent="QuestionSetup/GridContainer"]
 custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
-texture = ExtResource("4_d7aq7")
+texture = ExtResource("6_o3iux")
 
 [node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button1"]
 layout_mode = 0
@@ -171,7 +171,7 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
@@ -182,7 +182,7 @@ caret_blink_interval = 0.5
 [node name="Button2" type="TextureRect" parent="QuestionSetup/GridContainer"]
 custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
-texture = ExtResource("4_d7aq7")
+texture = ExtResource("6_o3iux")
 
 [node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button2"]
 layout_mode = 0
@@ -192,7 +192,7 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
@@ -203,7 +203,7 @@ caret_blink_interval = 0.5
 [node name="Button3" type="TextureRect" parent="QuestionSetup/GridContainer"]
 custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
-texture = ExtResource("4_d7aq7")
+texture = ExtResource("6_o3iux")
 
 [node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button3"]
 layout_mode = 0
@@ -213,7 +213,7 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
@@ -224,7 +224,7 @@ caret_blink_interval = 0.5
 [node name="Button4" type="TextureRect" parent="QuestionSetup/GridContainer"]
 custom_minimum_size = Vector2(200, 110)
 layout_mode = 2
-texture = ExtResource("4_d7aq7")
+texture = ExtResource("6_o3iux")
 
 [node name="LineEdit" type="TextEdit" parent="QuestionSetup/GridContainer/Button4"]
 layout_mode = 0
@@ -234,7 +234,7 @@ offset_right = 393.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mxnxm")
 placeholder_text = "Enter option"
@@ -250,7 +250,7 @@ offset_right = 1645.0
 offset_bottom = 700.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Input quesiton here"
 wrap_mode = 1
@@ -270,7 +270,7 @@ offset_left = 463.0
 offset_top = 72.0
 offset_right = 565.0
 offset_bottom = 172.0
-texture = ExtResource("6_gus8j")
+texture = ExtResource("7_snpun")
 
 [node name="CorrectButton" type="Control" parent="QuestionSetup"]
 anchors_preset = 0
@@ -284,7 +284,7 @@ offset_left = 749.0
 offset_top = 786.0
 offset_right = 819.0
 offset_bottom = 856.0
-texture_normal = ExtResource("11_fq67n")
+texture_normal = ExtResource("9_l8332")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -294,7 +294,7 @@ offset_left = 749.0
 offset_top = 902.0
 offset_right = 819.0
 offset_bottom = 972.0
-texture_normal = ExtResource("11_4ed50")
+texture_normal = ExtResource("10_q7yq8")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -304,7 +304,7 @@ offset_left = 1635.0
 offset_top = 786.0
 offset_right = 1705.0
 offset_bottom = 856.0
-texture_normal = ExtResource("11_4ed50")
+texture_normal = ExtResource("10_q7yq8")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -314,7 +314,7 @@ offset_left = 1635.0
 offset_top = 902.0
 offset_right = 1705.0
 offset_bottom = 972.0
-texture_normal = ExtResource("11_4ed50")
+texture_normal = ExtResource("10_q7yq8")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -324,11 +324,11 @@ offset_left = 1747.0
 offset_top = 255.0
 offset_right = 1820.0
 offset_bottom = 329.0
-texture_normal = ExtResource("11_gt37s")
-texture_click_mask = ExtResource("12_jlm23")
+texture_normal = ExtResource("11_0ndl6")
+texture_click_mask = ExtResource("12_2ue6u")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("13_eg70p")
+script = ExtResource("13_fnn00")
 
 [node name="CategoryInfo" type="Control" parent="."]
 visible = false
@@ -343,7 +343,7 @@ offset_left = 661.0
 offset_top = 250.0
 offset_right = 1100.0
 offset_bottom = 336.0
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 60
 text = "Category Title:"
 vertical_alignment = 1
@@ -355,7 +355,7 @@ offset_right = 1113.0
 offset_bottom = 134.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Input title here"
 
@@ -365,7 +365,7 @@ offset_left = 659.0
 offset_top = 400.0
 offset_right = 1098.0
 offset_bottom = 486.0
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 60
 text = "Category Description:"
 vertical_alignment = 1
@@ -377,7 +377,7 @@ offset_right = 1113.0
 offset_bottom = 249.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_s5cbx")
+theme_override_fonts/font = ExtResource("5_kwjar")
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Input description here"
 
@@ -398,11 +398,11 @@ offset_left = 1730.0
 offset_top = 110.0
 offset_right = 1820.0
 offset_bottom = 200.0
-texture_normal = ExtResource("9_qvhyk")
-texture_click_mask = ExtResource("12_jlm23")
+texture_normal = ExtResource("14_jl5nj")
+texture_click_mask = ExtResource("12_2ue6u")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("13_eg70p")
+script = ExtResource("13_fnn00")
 
 [node name="SaveButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -410,13 +410,13 @@ offset_left = 1637.0
 offset_top = 110.0
 offset_right = 1727.0
 offset_bottom = 200.0
-texture_normal = ExtResource("10_buhdk")
-texture_click_mask = ExtResource("12_jlm23")
+texture_normal = ExtResource("15_awtq2")
+texture_click_mask = ExtResource("12_2ue6u")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("13_eg70p")
+script = ExtResource("13_fnn00")
 
-[node name="Transition" parent="." instance=ExtResource("16_tl05f")]
+[node name="Transition" parent="." instance=ExtResource("16_4cy6q")]
 
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="QuestionList/Button1" to="." method="_on_button_1_pressed"]

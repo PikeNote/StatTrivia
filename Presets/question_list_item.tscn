@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dw1eb3ppnej3y"]
 
-[ext_resource type="Texture2D" uid="uid://b8xw57iufs06d" path="res://Color 5/Button2.png" id="1_do7fj"]
+[ext_resource type="Texture2D" uid="uid://b8xw57iufs06d" path="res://assets/Button2.png" id="1_x42wo"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="2_if7pw"]
 [ext_resource type="Script" path="res://Presets/question_list_item.gd" id="2_ksa0u"]
 [ext_resource type="Texture2D" uid="uid://l6isvmasi43i" path="res://assets/checkMark.png" id="4_kr35i"]
@@ -8,7 +8,7 @@
 
 [node name="QuestionListItem" type="TextureButton"]
 custom_minimum_size = Vector2(1420, 120)
-texture_normal = ExtResource("1_do7fj")
+texture_normal = ExtResource("1_x42wo")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_ksa0u")

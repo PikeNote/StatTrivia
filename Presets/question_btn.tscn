@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtj23im4w7a51"]
 
-[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="1_xmdaq"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://assets/Button 1.png" id="1_ejxuw"]
 [ext_resource type="Script" path="res://Presets/question_btn.gd" id="2_01e58"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="3_wpqjr"]
 [ext_resource type="Texture2D" uid="uid://bpnn2xbbqyigb" path="res://assets/IMG_2832.png" id="4_onvgb"]
@@ -11,7 +11,7 @@
 custom_minimum_size = Vector2(459, 102)
 offset_right = 459.0
 offset_bottom = 102.0
-texture_normal = ExtResource("1_xmdaq")
+texture_normal = ExtResource("1_ejxuw")
 stretch_mode = 0
 script = ExtResource("2_01e58")
 

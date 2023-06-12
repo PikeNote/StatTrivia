@@ -37,7 +37,7 @@ func _on_play_button_pressed():
 		for active_cat in $ActiveScroll/ActiveCategories.get_children():
 			Categories.activeCategories.append(Categories.categoriesList[active_cat.getCat()]);
 		GameManager.total_questions = int($InstructionTwo2/LineEdit.value);
-		$Transition.transition("res://QuestionTemp.tscn");
+		$Transition.transition("res://Screens/QuestionScreen.tscn");
 
 
 func getTotalQuestions():
@@ -59,5 +59,5 @@ func _on_line_edit_value_changed(value):
 
 
 func _on_quit_button_pressed():
-	$Transition.transition("res://Main.tscn");
+	$Transition.transition("res://Screens/MainMenu.tscn");
 	pass # Replace with function body.

@@ -3,6 +3,7 @@ extends Node2D
 var queuedScene = "";
 signal transition_in_done
 signal transition_out_done
+signal tween_done
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,8 +43,15 @@ func _slide_object(node:Control, direction, time, reverse):
 	if(!reverse):
 		node.position = pos;
 		tween.tween_property(node, "position", default_position, time);
+		tween.finished.connect(tween_finished.bind(node, default_position, false));
 	else:
 		tween.tween_property(node, "position", pos, time);
-		#node.visible = false;
-		#node.position = default_position;
-	pass;
+		tween.finished.connect(tween_finished.bind(node, default_position, true));
+		
+
+func tween_finished(node, default_position, move):
+	print("Finished")
+	emit_signal("tween_done");
+	if(move):
+		node.position = default_position;
+		node.visible = false;

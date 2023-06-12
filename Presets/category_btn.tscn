@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://gkwu7k1xuf2n"]
 
-[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="1_4q2jy"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://assets/Button 1.png" id="1_4q2jy"]
 [ext_resource type="Script" path="res://Presets/category_btn.gd" id="2_8sytf"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="3_4k402"]
 [ext_resource type="Texture2D" uid="uid://piq3gqbiqf1m" path="res://assets/ChangeName_Button.PNG" id="4_bwbvv"]

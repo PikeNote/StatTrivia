@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://dy04j4p55wsa6"]
 
-[ext_resource type="Script" path="res://QuestionTemp.gd" id="1_3ge0g"]
-[ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="2_66jwl"]
-[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="3_sojs0"]
-[ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="4_x6ost"]
-[ext_resource type="Texture2D" uid="uid://niqisen1qayq" path="res://assets/Circle_Button.png" id="5_3o0lw"]
-[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_c8sfd"]
-[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="8_1wad3"]
+[ext_resource type="Script" path="res://Screens/QuestionScreen.gd" id="1_cv40w"]
+[ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="2_2jhar"]
+[ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://assets/Button 1.png" id="3_mmbgs"]
+[ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="4_vx4il"]
+[ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="5_ahjyj"]
+[ext_resource type="Texture2D" uid="uid://niqisen1qayq" path="res://assets/Circle_Button.png" id="6_c5twx"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Transition/Transition.tscn" id="7_55bdn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wc6wv"]
 bg_color = Color(1, 1, 1, 1)
@@ -131,13 +131,13 @@ offset_top = 4.0
 offset_right = 4.0
 offset_bottom = 4.0
 mouse_filter = 1
-script = ExtResource("1_3ge0g")
+script = ExtResource("1_cv40w")
 
 [node name="RobBottomLeft" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_66jwl")
+texture = ExtResource("2_2jhar")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
@@ -150,7 +150,7 @@ columns = 2
 [node name="Button1" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("3_sojs0")
+texture_normal = ExtResource("3_mmbgs")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="GridContainer/Button1"]
@@ -175,7 +175,7 @@ offset_left = 16.0
 offset_top = 7.0
 offset_right = 583.0
 offset_bottom = 134.0
-theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_fonts/font = ExtResource("4_vx4il")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
@@ -186,7 +186,7 @@ clip_text = true
 [node name="Button2" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("3_sojs0")
+texture_normal = ExtResource("3_mmbgs")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="GridContainer/Button2"]
@@ -211,7 +211,7 @@ offset_left = 18.0
 offset_top = 6.0
 offset_right = 583.0
 offset_bottom = 135.0
-theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_fonts/font = ExtResource("4_vx4il")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
@@ -222,7 +222,7 @@ clip_text = true
 [node name="Button3" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("3_sojs0")
+texture_normal = ExtResource("3_mmbgs")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="GridContainer/Button3"]
@@ -247,7 +247,7 @@ offset_left = 18.0
 offset_top = 7.0
 offset_right = 583.0
 offset_bottom = 135.0
-theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_fonts/font = ExtResource("4_vx4il")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
@@ -258,7 +258,7 @@ clip_text = true
 [node name="Button4" type="TextureButton" parent="GridContainer"]
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 2
-texture_normal = ExtResource("3_sojs0")
+texture_normal = ExtResource("3_mmbgs")
 stretch_mode = 0
 
 [node name="CorrectWrongColor" type="Control" parent="GridContainer/Button4"]
@@ -283,7 +283,7 @@ offset_left = 18.0
 offset_top = 7.0
 offset_right = 583.0
 offset_bottom = 134.0
-theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_fonts/font = ExtResource("4_vx4il")
 theme_override_font_sizes/font_size = 30
 text = "Placeholder text"
 horizontal_alignment = 1
@@ -307,7 +307,7 @@ offset_top = -54.0
 offset_right = 1072.0
 offset_bottom = 211.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_fonts/font = ExtResource("4_vx4il")
 theme_override_font_sizes/font_size = 30
 text = "dasdasdsa"
 horizontal_alignment = 1
@@ -320,7 +320,7 @@ offset_left = -69.0
 offset_top = -459.0
 offset_right = 1053.0
 offset_bottom = -56.0
-texture = ExtResource("4_x6ost")
+texture = ExtResource("5_ahjyj")
 expand_mode = 1
 stretch_mode = 5
 
@@ -331,7 +331,7 @@ offset_top = 107.0
 offset_right = 1648.0
 offset_bottom = 691.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_fonts/font = ExtResource("4_vx4il")
 theme_override_font_sizes/font_size = 40
 text = "dasdasdsa"
 horizontal_alignment = 1
@@ -349,7 +349,7 @@ offset_left = 1737.0
 offset_top = 35.0
 offset_right = 1882.0
 offset_bottom = 180.0
-texture = ExtResource("5_3o0lw")
+texture = ExtResource("6_c5twx")
 expand_mode = 5
 
 [node name="QuestionNumber" type="Label" parent="QuestionCount"]
@@ -359,7 +359,7 @@ offset_top = 15.0
 offset_right = 131.0
 offset_bottom = 132.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_c8sfd")
+theme_override_fonts/font = ExtResource("4_vx4il")
 theme_override_font_sizes/font_size = 40
 text = "1/10"
 horizontal_alignment = 1
@@ -370,6 +370,6 @@ libraries = {
 "": SubResource("AnimationLibrary_0e650")
 }
 
-[node name="Transition" parent="." instance=ExtResource("8_1wad3")]
+[node name="Transition" parent="." instance=ExtResource("7_55bdn")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

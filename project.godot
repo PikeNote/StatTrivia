@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TriviaStatigan"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Screens/MainMenu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -30,7 +30,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BTransition/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 

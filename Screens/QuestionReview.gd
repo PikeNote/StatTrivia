@@ -84,7 +84,7 @@ func _on_quit_button_pressed():
 
 
 func _on_main_quit_button_pressed():
-	$Transition.transition("res://Main.tscn");
+	$Transition.transition("res://Screens/MainMenu.tscn");
 
 func _on_overview_btn_pressed():
 	$"Question List".visible = false;

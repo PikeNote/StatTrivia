@@ -211,10 +211,10 @@ func _on_save_button_pressed():
 	for ques_btn in $QuestionList/VBoxContainer/QuestionBox/VBoxContainer.get_children():
 		EditCategory.data["questions"].append(ques_btn.getData());
 	EditCategory.saveData();
-	$Transition.transition("res://QuestionCreator/CategoryManagement.tscn")
+	_on_quit_button_pressed();
 
 func _on_quit_button_pressed():
-	$Transition.transition("res://QuestionCreator/CategoryManagement.tscn")
+	$Transition.transition("res://Screens/QuestionCreator/CategoryManagement.tscn")
 
 
 func correct_answer_pressed(btn:TextureButton):

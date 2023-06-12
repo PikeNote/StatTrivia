@@ -9,6 +9,8 @@ var labels = [];
 var correct_btn = Color.html("288b3f")
 var wrong_btn = Color.html("cc4147")
 
+var disableInput = false;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	QuestionData.questions = [];
@@ -89,7 +91,7 @@ func _process(delta):
 
 
 func _on_button_pressed(btn):
-	if(not $AnimationPlayer.is_playing()):
+	if(!$AnimationPlayer.is_playing() && !disableInput):
 		var ques_data = questions[currentQuestion]
 		if(btn.get_index() == correctAnswer):
 			btn.get_child(0).get_child(0).self_modulate = correct_btn;
@@ -112,8 +114,9 @@ func _on_animation_player_animation_finished(anim_name):
 		currentQuestion += 1;
 		_setQuestion(currentQuestion);
 	else:
+		disableInput = true;
 		QuestionData.endTime = Time.get_unix_time_from_system();
-		$Transition.transition("res://Presets/QuestionReview.tscn");
+		$Transition.transition("res://Screens/QuestionReview.tscn");
 	$AnimationPlayer.seek(0,true);
 	_updateQuestionProgress();
 	_resetVisiblity();
