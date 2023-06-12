@@ -2,8 +2,14 @@ extends Control
 
 
 var QuestionListItem = preload("res://Presets/question_list_item.tscn");
-var correct_btn = load("res://Color 5/Button_Green.png");
-var wrong_btn = load("res://Color 5/Button_Red.png")
+var catBreakdown = preload("res://Presets/category_progress.tscn")
+var category_breakdown = {
+	
+}
+var correct = 0;
+var total = 0;
+var correct_btn = Color.html("288b3f")
+var wrong_btn = Color.html("cc4147")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +18,29 @@ func _ready():
 		qInstItem.setData(q);
 		$"Question List/VBoxContainer".add_child(qInstItem);
 		qInstItem.pressed.connect(buttonCatPressed.bind(qInstItem));
-
+		if(!q["category_origin"] in category_breakdown):
+			category_breakdown[q["category_origin"]] = {
+				"correct":0,
+				"total":0
+			}
+		category_breakdown[q["category_origin"]]["total"] += 1;
+		total+=1;
+		if(!"wrong_ind" in q):
+			category_breakdown[q["category_origin"]]["correct"] += 1;
+			correct+=1;
+	
+	for cat_correct in category_breakdown:
+		var instCatBreakdown = catBreakdown.instantiate();
+		instCatBreakdown.load(cat_correct, category_breakdown[cat_correct]);
+		$OverviewItems/ActiveCats/ScrollContainer/VBoxContainer.add_child(instCatBreakdown);
+	
+	$OverviewItems/Score_Report/Value.text = str(correct) + "/" + str(total);
+	
+	var timeTaken = int(QuestionData.endTime - QuestionData.startTime);
+	var seconds = timeTaken%60;
+	var minutes = floor(timeTaken/60);
+	$OverviewItems/Time_Taken/Value.text = str(minutes) + ":" + str(seconds) + " Minutes";
+	$OverviewBTN.setActive(true);
 
 func buttonCatPressed(btn):
 	var data = btn.getData();
@@ -37,13 +65,13 @@ func buttonCatPressed(btn):
 	if(data.has("wrong_ind")):
 		var wrongColorRect = $ShowQuestion/GridContainer.get_child(data["wrong_ind"]).get_child(0);
 		print(data["wrong_ind"])
-		wrongColorRect.texture = wrong_btn;
+		wrongColorRect.get_child(0).self_modulate = wrong_btn;
 		wrongColorRect.visible = true;
 	
 	print(data["correct"])
 	var correctOptionRect = $ShowQuestion/GridContainer.get_child(data["correct"]).get_child(0)
 	
-	correctOptionRect.texture = correct_btn;
+	correctOptionRect.get_child(0).self_modulate = correct_btn;
 	correctOptionRect.visible = true;
 	
 	print(correctOptionRect.visible)
@@ -56,5 +84,20 @@ func _on_quit_button_pressed():
 
 
 func _on_main_quit_button_pressed():
-	$Transitioner.transition_scene(self, "res://Main.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.LEFT)
+	$Transition.transition("res://Main.tscn");
 
+func _on_overview_btn_pressed():
+	$"Question List".visible = false;
+	$OverviewItems.visible = true;
+	$OverviewBTN.setActive(true);
+	$QuestionListBTN.setActive(false);
+	$OverviewLabel.text = "Question Overview"
+	pass # Replace with function body.
+
+
+func _on_question_list_btn_pressed():
+	$"Question List".visible = true;
+	$OverviewItems.visible = false;
+	$OverviewBTN.setActive(false);
+	$QuestionListBTN.setActive(true);
+	$OverviewLabel.text = "Question List"

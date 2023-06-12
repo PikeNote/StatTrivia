@@ -7,13 +7,13 @@
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_jje6y"]
 [ext_resource type="Texture2D" uid="uid://dcmo10p7joyr6" path="res://Color 5/AddIconGray.png" id="7_8mamm"]
 [ext_resource type="Texture2D" uid="uid://dmbxufrnb7way" path="res://assets/IMG_2830.png" id="7_hel1h"]
-[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="8_bvhpy"]
 [ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="8_xd732"]
 [ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_8j2l1"]
 [ext_resource type="Script" path="res://Presets/HoverButton.gd" id="9_h28i5"]
 [ext_resource type="Texture2D" uid="uid://po1xwhxjdhtt" path="res://assets/Join_Lobby_Button.PNG" id="11_g6lqo"]
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="12_04pdu"]
 [ext_resource type="Script" path="res://QuestionCreator/ImportCat.gd" id="12_18rog"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="14_qvf5o"]
 
 [node name="CategoryManagement" type="Control"]
 layout_mode = 3
@@ -289,8 +289,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("9_h28i5")
 
-[node name="Transitioner" type="Node" parent="."]
-script = ExtResource("8_bvhpy")
+[node name="Transition" parent="." instance=ExtResource("14_qvf5o")]
 
 [connection signal="pressed" from="QuestionList/VBoxContainer/CenterContainer/AddCat" to="." method="_on_add_cat_pressed"]
 [connection signal="pressed" from="CategoryInfo/Export" to="." method="_on_export_pressed"]

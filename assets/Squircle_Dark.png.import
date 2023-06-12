@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs587qojgme13"
-path="res://.godot/imported/BTransition.svg-ad5e9dad3a3290bf35a05b56b3e5746b.ctex"
+uid="uid://bott8cw8frk25"
+path="res://.godot/imported/Squircle_Dark.png-55f68523d8323280122cbe4c2df394a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/BTransition/BTransition.svg"
-dest_files=["res://.godot/imported/BTransition.svg-ad5e9dad3a3290bf35a05b56b3e5746b.ctex"]
+source_file="res://assets/Squircle_Dark.png"
+dest_files=["res://.godot/imported/Squircle_Dark.png-55f68523d8323280122cbe4c2df394a4.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

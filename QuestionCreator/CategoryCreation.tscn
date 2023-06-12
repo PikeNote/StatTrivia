@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bpnn2xbbqyigb" path="res://assets/IMG_2832.png" id="11_gt37s"]
 [ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="12_jlm23"]
 [ext_resource type="Script" path="res://Presets/HoverButton.gd" id="13_eg70p"]
-[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="13_qt65c"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="16_tl05f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxnxm"]
 
@@ -416,8 +416,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("13_eg70p")
 
-[node name="Transitioner" type="Node" parent="."]
-script = ExtResource("13_qt65c")
+[node name="Transition" parent="." instance=ExtResource("16_tl05f")]
 
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="QuestionList/Button1" to="." method="_on_button_1_pressed"]

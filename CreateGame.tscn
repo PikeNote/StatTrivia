@@ -9,7 +9,7 @@
 [ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="7_6ux6i"]
 [ext_resource type="Texture2D" uid="uid://bahpioa2fri4r" path="res://assets/Play_Button.PNG" id="7_uf06y"]
 [ext_resource type="Script" path="res://Presets/HoverButton.gd" id="8_6jhb1"]
-[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="10_x5yhg"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="10_vc8bk"]
 
 [node name="CreateGame" type="Control"]
 layout_mode = 3
@@ -198,8 +198,7 @@ offset_bottom = 1024.0
 custom_minimum_size = Vector2(375, 443)
 layout_mode = 2
 
-[node name="Transitioner" type="Node" parent="."]
-script = ExtResource("10_x5yhg")
+[node name="Transition" parent="." instance=ExtResource("10_vc8bk")]
 
 [connection signal="value_changed" from="InstructionTwo2/LineEdit" to="." method="_on_line_edit_value_changed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

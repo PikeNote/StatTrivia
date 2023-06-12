@@ -12,7 +12,7 @@ func _ready():
 func setData(d):
 	data = d;
 	if(data.has("wrong_ind")):
-		$CorrectWrong.texture = load("res://Color 5/x.png")
+		$CorrectWrong.texture = load("res://assets/xMark.png")
 	$QuestionTitle.text = data["question"].replace("\n", "");
 	$CategoryTag/Label.text = data["category_origin"];
 func getData():

@@ -6,8 +6,8 @@ var correctAnswer = 0;
 var labels = [];
 
 
-var correct_btn = load("res://Color 5/Button_Green.png");
-var wrong_btn = load("res://Color 5/Button_Red.png")
+var correct_btn = Color.html("288b3f")
+var wrong_btn = Color.html("cc4147")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,6 +40,8 @@ func _ready():
 	_setQuestion(currentQuestion);
 	
 	_updateQuestionProgress();
+	
+	QuestionData.startTime = Time.get_unix_time_from_system();
 	
 	pass # Replace with function body.
 
@@ -90,13 +92,13 @@ func _on_button_pressed(btn):
 	if(not $AnimationPlayer.is_playing()):
 		var ques_data = questions[currentQuestion]
 		if(btn.get_index() == correctAnswer):
-			btn.get_child(0).texture = correct_btn
+			btn.get_child(0).get_child(0).self_modulate = correct_btn;
 			correctAnswer += 1;
 		else:
-			btn.get_child(0).texture = wrong_btn;
+			btn.get_child(0).get_child(0).self_modulate = wrong_btn;
 			var correct = $GridContainer.get_child(correctAnswer).get_child(0)
 			correct.visible = true;
-			correct.texture = correct_btn
+			correct.get_child(0).self_modulate = correct_btn
 			ques_data["wrong_ind"] = ques_data["options"].find(btn.get_child(1).text);
 		QuestionData.questions.append(ques_data);
 		btn.get_child(0).visible = true;
@@ -110,7 +112,8 @@ func _on_animation_player_animation_finished(anim_name):
 		currentQuestion += 1;
 		_setQuestion(currentQuestion);
 	else:
-		$Transitioner.transition_scene(self, "res://Presets/QuestionReview.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.RIGHT)
+		QuestionData.endTime = Time.get_unix_time_from_system();
+		$Transition.transition("res://Presets/QuestionReview.tscn");
 	$AnimationPlayer.seek(0,true);
 	_updateQuestionProgress();
 	_resetVisiblity();

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b8xw57iufs06d" path="res://Color 5/Button2.png" id="1_do7fj"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="2_if7pw"]
 [ext_resource type="Script" path="res://Presets/question_list_item.gd" id="2_ksa0u"]
-[ext_resource type="Texture2D" uid="uid://bpr6nwho4dn82" path="res://Color 5/check.png" id="3_bxm44"]
+[ext_resource type="Texture2D" uid="uid://l6isvmasi43i" path="res://assets/checkMark.png" id="4_kr35i"]
 [ext_resource type="Texture2D" uid="uid://dkt3fiqmjtev2" path="res://assets/Squircle_Button.png" id="5_wi1n6"]
 
 [node name="QuestionListItem" type="TextureButton"]
@@ -28,11 +28,11 @@ text_overrun_behavior = 3
 
 [node name="CorrectWrong" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1284.0
-offset_top = 13.0
-offset_right = 1391.0
-offset_bottom = 106.0
-texture = ExtResource("3_bxm44")
+offset_left = 1300.0
+offset_top = 20.0
+offset_right = 1382.0
+offset_bottom = 98.0
+texture = ExtResource("4_kr35i")
 expand_mode = 1
 
 [node name="CategoryTag" type="TextureRect" parent="."]

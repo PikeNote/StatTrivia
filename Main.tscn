@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfpcxsgc43xd2"]
+[gd_scene load_steps=11 format=3 uid="uid://bfpcxsgc43xd2"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_4loon"]
 [ext_resource type="Texture2D" uid="uid://cealbhujdtngv" path="res://assets/Stats_Main_Menu_With_Title.png" id="1_allfu"]
 [ext_resource type="Texture2D" uid="uid://0ym8fkgwjybr" path="res://assets/Rectangle_Button.png" id="2_6jkic"]
-[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="3_hdw8q"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="2_jx8b7"]
 [ext_resource type="Script" path="res://Presets/HoverButton.gd" id="4_3un04"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_ou07l"]
+[ext_resource type="Texture2D" uid="uid://bko5giqaidk5h" path="res://assets/Credits_Screen.PNG" id="6_27crm"]
+[ext_resource type="Texture2D" uid="uid://x5367ueb15k4" path="res://assets/LinkedIn_logo_initials.png" id="7_bkttb"]
+[ext_resource type="Texture2D" uid="uid://bxhev71vuhwwt" path="res://assets/25231.png" id="8_pjqj7"]
+[ext_resource type="Texture2D" uid="uid://cdqchwfkc470h" path="res://assets/Quit_Button.PNG" id="9_jm6yi"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -13,17 +17,19 @@ anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("1_4loon")
 
-[node name="Panel8" type="Sprite2D" parent="."]
-position = Vector2(958.5, 541.5)
+[node name="Panel8" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 scale = Vector2(0.999479, 1.00463)
 texture = ExtResource("1_allfu")
 
 [node name="VFlowContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 676.0
-offset_top = 346.25
+offset_top = 416.0
 offset_right = 1276.0
-offset_bottom = 998.25
+offset_bottom = 918.0
 
 [node name="PlayBtn" type="TextureButton" parent="VFlowContainer"]
 custom_minimum_size = Vector2(400, 160)
@@ -65,26 +71,6 @@ text = "Categories"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsBtn" type="TextureButton" parent="VFlowContainer"]
-custom_minimum_size = Vector2(500, 160)
-layout_mode = 2
-texture_normal = ExtResource("2_6jkic")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_3un04")
-
-[node name="Label" type="Label" parent="VFlowContainer/SettingsBtn"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 13.0
-offset_right = 578.0
-offset_bottom = 143.0
-theme_override_fonts/font = ExtResource("5_ou07l")
-theme_override_font_sizes/font_size = 74
-text = "Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="CreditsBtn" type="TextureButton" parent="VFlowContainer"]
 custom_minimum_size = Vector2(500, 160)
 layout_mode = 2
@@ -105,8 +91,173 @@ text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Transitioner" type="Node" parent="."]
-script = ExtResource("3_hdw8q")
+[node name="CreditsScreen" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_27crm")
+
+[node name="Label" type="Label" parent="CreditsScreen"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 236.0
+offset_right = 1361.0
+offset_bottom = 993.0
+theme_override_fonts/font = ExtResource("5_ou07l")
+theme_override_font_sizes/font_size = 78
+text = "Lead Develpoer - Kevin Huang
+Default Categories - Janet Paida
+Artist - Ashley Molina
+
+Ms.Kandigan for teaching us statistics!
+
+Feel free to use this project as you 
+please! It is open source on
+
+If there is a bug, report it on there."
+
+[node name="Links" type="Control" parent="CreditsScreen/Label"]
+anchors_preset = 0
+offset_left = 1033.0
+offset_top = 21.0
+offset_right = 1033.0
+offset_bottom = 21.0
+
+[node name="LinkedIn" type="LinkButton" parent="CreditsScreen/Label/Links"]
+layout_mode = 0
+offset_left = -23.0
+offset_right = 163.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.258824, 0.47451, 1, 1)
+theme_override_fonts/font = ExtResource("5_ou07l")
+theme_override_font_sizes/font_size = 50
+text = "LinkedIn"
+underline = 1
+uri = "https://www.linkedin.com/in/kevin-huang-b12461263/"
+
+[node name="TextureRect" type="TextureRect" parent="CreditsScreen/Label/Links/LinkedIn"]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -7.0
+offset_right = -7.0
+offset_bottom = 33.0
+texture = ExtResource("7_bkttb")
+expand_mode = 1
+
+[node name="GitHub" type="LinkButton" parent="CreditsScreen/Label/Links"]
+layout_mode = 0
+offset_left = 223.0
+offset_right = 369.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.258824, 0.47451, 1, 1)
+theme_override_fonts/font = ExtResource("5_ou07l")
+theme_override_font_sizes/font_size = 50
+text = "GitHub"
+underline = 1
+uri = "https://github.com/PikeNote/"
+
+[node name="TextureRect2" type="TextureRect" parent="CreditsScreen/Label/Links/GitHub"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -7.0
+offset_right = -5.0
+offset_bottom = 33.0
+texture = ExtResource("8_pjqj7")
+expand_mode = 1
+
+[node name="Links3" type="Control" parent="CreditsScreen/Label"]
+anchors_preset = 0
+offset_left = 765.0
+offset_top = 176.0
+offset_right = 765.0
+offset_bottom = 176.0
+
+[node name="LinkedIn" type="LinkButton" parent="CreditsScreen/Label/Links3"]
+layout_mode = 0
+offset_left = -23.0
+offset_right = 163.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.258824, 0.47451, 1, 1)
+theme_override_fonts/font = ExtResource("5_ou07l")
+theme_override_font_sizes/font_size = 50
+text = "LinkedIn"
+underline = 1
+uri = "https://www.linkedin.com/in/ash-molina/"
+
+[node name="TextureRect" type="TextureRect" parent="CreditsScreen/Label/Links3/LinkedIn"]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -7.0
+offset_right = -7.0
+offset_bottom = 33.0
+texture = ExtResource("7_bkttb")
+expand_mode = 1
+
+[node name="Links2" type="Control" parent="CreditsScreen/Label"]
+anchors_preset = 0
+offset_left = 1172.0
+offset_top = 98.0
+offset_right = 1172.0
+offset_bottom = 98.0
+
+[node name="LinkedIn" type="LinkButton" parent="CreditsScreen/Label/Links2"]
+layout_mode = 0
+offset_left = -23.0
+offset_right = 163.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.258824, 0.47451, 1, 1)
+theme_override_fonts/font = ExtResource("5_ou07l")
+theme_override_font_sizes/font_size = 50
+text = "LinkedIn"
+underline = 1
+uri = "https://www.linkedin.com/in/janet-paida-620591209/"
+
+[node name="TextureRect" type="TextureRect" parent="CreditsScreen/Label/Links2/LinkedIn"]
+layout_mode = 0
+offset_left = -47.0
+offset_top = -7.0
+offset_right = -7.0
+offset_bottom = 33.0
+texture = ExtResource("7_bkttb")
+expand_mode = 1
+
+[node name="GitHub2" type="LinkButton" parent="CreditsScreen/Label"]
+layout_mode = 0
+offset_left = 942.0
+offset_top = 558.0
+offset_right = 1088.0
+offset_bottom = 606.0
+theme_override_colors/font_color = Color(0.258824, 0.47451, 1, 1)
+theme_override_fonts/font = ExtResource("5_ou07l")
+theme_override_font_sizes/font_size = 50
+text = "GitHub"
+underline = 1
+uri = "https://github.com/PikeNote/StatTrivia"
+
+[node name="TextureRect2" type="TextureRect" parent="CreditsScreen/Label/GitHub2"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -7.0
+offset_right = -5.0
+offset_bottom = 33.0
+texture = ExtResource("8_pjqj7")
+expand_mode = 1
+
+[node name="QuitCredits" type="TextureButton" parent="CreditsScreen"]
+layout_mode = 0
+offset_left = 1764.0
+offset_top = 21.0
+offset_right = 1883.0
+offset_bottom = 141.0
+texture_normal = ExtResource("9_jm6yi")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_3un04")
+
+[node name="Transition" parent="." instance=ExtResource("2_jx8b7")]
 
 [connection signal="pressed" from="VFlowContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="VFlowContainer/CategoriesBtn" to="." method="_on_categories_btn_pressed"]
+[connection signal="pressed" from="VFlowContainer/CreditsBtn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="CreditsScreen/QuitCredits" to="." method="_on_quit_credits_pressed"]

@@ -3,25 +3,31 @@
 [ext_resource type="Script" path="res://QuestionTemp.gd" id="1_3ge0g"]
 [ext_resource type="Texture2D" uid="uid://dddgcrpt7ghp" path="res://assets/Rob_Bottom_Left.PNG" id="2_66jwl"]
 [ext_resource type="Texture2D" uid="uid://bhwdt4belt4pj" path="res://Color 5/Button 1.png" id="3_sojs0"]
-[ext_resource type="Texture2D" uid="uid://gdf14es3m6rb" path="res://Color 5/Button_Green.png" id="4_bluoo"]
 [ext_resource type="Texture2D" uid="uid://b3g31nvwr3stk" path="res://border.png" id="4_x6ost"]
 [ext_resource type="Texture2D" uid="uid://niqisen1qayq" path="res://assets/Circle_Button.png" id="5_3o0lw"]
 [ext_resource type="FontFile" uid="uid://c608x6u2o8b2l" path="res://Font/Robfont-Regular.ttf" id="5_c8sfd"]
-[ext_resource type="Script" path="res://addons/BTransition/Transitioner.gd" id="7_ur2nk"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="8_1wad3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wc6wv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
 
 [sub_resource type="Animation" id="Animation_cjcsd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GridContainer/Button1/CorrectWrongColor:size")
+tracks/0/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 140)]
+"values": [Vector2(602, 140)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -33,7 +39,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(602, 140)]
+"values": [Vector2(600, 140)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -45,19 +51,19 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(602, 140)]
+"values": [Vector2(600, 140)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
+tracks/3/path = NodePath("GridContainer/Button1/CorrectWrongColor:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(602, 140)]
+"values": [Vector2(600, 140)]
 }
 
 [sub_resource type="Animation" id="Animation_qkst8"]
@@ -65,7 +71,7 @@ resource_name = "expandingRect"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GridContainer/Button1/CorrectWrongColor:size")
+tracks/0/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,7 +90,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 140), Vector2(602, 140)]
+"values": [Vector2(0, 140), Vector2(600, 140)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -96,19 +102,19 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 140), Vector2(602, 140)]
+"values": [Vector2(0, 140), Vector2(600, 140)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GridContainer/Button4/CorrectWrongColor:size")
+tracks/3/path = NodePath("GridContainer/Button1/CorrectWrongColor:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 140), Vector2(602, 140)]
+"values": [Vector2(0, 140), Vector2(600, 140)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0e650"]
@@ -147,13 +153,21 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button1"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = -1.0
+[node name="CorrectWrongColor" type="Control" parent="GridContainer/Button1"]
+self_modulate = Color(0.156863, 0.545098, 0.247059, 1)
+clip_contents = true
+anchors_preset = 0
+offset_right = 600.0
 offset_bottom = 140.0
-texture = ExtResource("4_bluoo")
-expand_mode = 1
+
+[node name="ColorRect" type="Panel" parent="GridContainer/Button1/CorrectWrongColor"]
+self_modulate = Color(0.156863, 0.545098, 0.247059, 1)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 595.0
+offset_bottom = 135.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wc6wv")
 
 [node name="Label" type="Label" parent="GridContainer/Button1"]
 layout_mode = 0
@@ -175,13 +189,21 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button2"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 601.0
+[node name="CorrectWrongColor" type="Control" parent="GridContainer/Button2"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 600.0
 offset_bottom = 140.0
-texture = ExtResource("4_bluoo")
-expand_mode = 1
+
+[node name="ColorRect" type="Panel" parent="GridContainer/Button2/CorrectWrongColor"]
+self_modulate = Color(0.8, 0.254902, 0.278431, 1)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 595.0
+offset_bottom = 135.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wc6wv")
 
 [node name="Label" type="Label" parent="GridContainer/Button2"]
 layout_mode = 0
@@ -203,13 +225,21 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button3"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 601.0
+[node name="CorrectWrongColor" type="Control" parent="GridContainer/Button3"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 600.0
 offset_bottom = 140.0
-texture = ExtResource("4_bluoo")
-expand_mode = 1
+
+[node name="ColorRect" type="Panel" parent="GridContainer/Button3/CorrectWrongColor"]
+self_modulate = Color(0.156863, 0.545098, 0.247059, 1)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 595.0
+offset_bottom = 135.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wc6wv")
 
 [node name="Label" type="Label" parent="GridContainer/Button3"]
 layout_mode = 0
@@ -231,13 +261,21 @@ layout_mode = 2
 texture_normal = ExtResource("3_sojs0")
 stretch_mode = 0
 
-[node name="CorrectWrongColor" type="TextureRect" parent="GridContainer/Button4"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 601.0
+[node name="CorrectWrongColor" type="Control" parent="GridContainer/Button4"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 602.0
 offset_bottom = 140.0
-texture = ExtResource("4_bluoo")
-expand_mode = 1
+
+[node name="ColorRect" type="Panel" parent="GridContainer/Button4/CorrectWrongColor"]
+self_modulate = Color(0.156863, 0.545098, 0.247059, 1)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 595.0
+offset_bottom = 135.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wc6wv")
 
 [node name="Label" type="Label" parent="GridContainer/Button4"]
 layout_mode = 0
@@ -332,7 +370,6 @@ libraries = {
 "": SubResource("AnimationLibrary_0e650")
 }
 
-[node name="Transitioner" type="Node" parent="."]
-script = ExtResource("7_ur2nk")
+[node name="Transition" parent="." instance=ExtResource("8_1wad3")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

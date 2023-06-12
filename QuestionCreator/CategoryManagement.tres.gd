@@ -99,7 +99,7 @@ func getUnique():
 	return filePath;
 
 func _on_quit_button_pressed():
-	$Transitioner.transition_scene(self, "res://Main.tscn", 1, Tween.TRANS_SINE, Tween.EASE_OUT, BTrans.DIRECTION.LEFT)
+	$Transition.transition("res://Main.tscn")
 	pass # Replace with function body.
 
 func importCat(data):
