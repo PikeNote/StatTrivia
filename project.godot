@@ -13,6 +13,7 @@ config_version=5
 config/name="TriviaStatigan"
 run/main_scene="res://Screens/MainMenu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+boot_splash/image="res://assets/Splash_Screen.png"
 config/icon="res://icon.svg"
 
 [autoload]
