@@ -3,6 +3,8 @@ extends Control
 var duringTween = false;
 
 func _ready():
+	$CheckBox.button_pressed = GameManager.settings["showDefault"];
+	$CheckBox.toggled.connect(_on_check_box_toggled);
 	pass # Replace with function body.
 
 func _process(delta):
@@ -29,3 +31,8 @@ func _on_quit_credits_pressed():
 
 func _on_transition_tween_done():
 	duringTween = false;
+
+func _on_check_box_toggled(button_pressed):
+	print(button_pressed)
+	GameManager.settings["showDefault"] = button_pressed;
+	GameManager.save();

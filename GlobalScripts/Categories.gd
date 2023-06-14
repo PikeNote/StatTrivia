@@ -11,14 +11,15 @@ var activeCategories = [];
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize();
-	print("Test")
-	_loadDir("res://Categories//");
+	if(GameManager.settings["showDefault"]):
+		_loadDir("res://Categories//");
 
 func reloadCat():
 	categories={};
 	categoriesList=[];
 	activeCategories=[];
-	_loadDir("res://Categories//");
+	if(GameManager.settings["showDefault"]):
+		_loadDir("res://Categories//");
 	_loadDir("user://categories//");
 
 func _loadDir(d):

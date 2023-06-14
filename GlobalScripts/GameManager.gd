@@ -4,11 +4,23 @@ var total_questions = 10;
 var questions_correct = 0;
 var questions = [];
 
-# Called when the node enters the scene tree for the first time.
+var settings = {
+	"showDefault":true
+}
+
+var settingsPath = "user://gameSettings.json";
+
 func _ready():
-	pass # Replace with function body.
+	load_settings();
 
+func load_settings():
+	if(FileAccess.file_exists(settingsPath)):
+		var settings_file = FileAccess.open(settingsPath, FileAccess.READ);
+		settings  = JSON.parse_string(settings_file.get_as_text());
+	else:
+		save();
+	print(settings);
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func save():
+	var settings_file = FileAccess.open(settingsPath, FileAccess.WRITE);
+	settings_file.store_line(JSON.stringify(settings));

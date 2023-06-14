@@ -9,7 +9,7 @@
 [ext_resource type="BitMap" uid="uid://dkaruaa02hbql" path="res://assets/Button_Mask_Circular.PNG" id="7_3wc4q"]
 [ext_resource type="Script" path="res://Presets/HoverButton.gd" id="8_hphdn"]
 [ext_resource type="Texture2D" uid="uid://bahpioa2fri4r" path="res://assets/Play_Button.PNG" id="9_8tjl3"]
-[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Scenes/Transition.tscn" id="10_5li0w"]
+[ext_resource type="PackedScene" uid="uid://c6sbjmbufmrko" path="res://Transition/Transition.tscn" id="10_5li0w"]
 
 [node name="CreateGame" type="Control"]
 layout_mode = 3
