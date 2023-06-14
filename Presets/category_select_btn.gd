@@ -8,8 +8,10 @@ func _ready():
 
 func loadCat(i):
 	catInd = i;
-	$Label.text = Categories.categories[Categories.categoriesList[i]]["name"];
-	$Label2.text = str(getQuestionCount()) + " questions";
+	$ScrollContainer/Title.text = Categories.categories[Categories.categoriesList[i]]["name"];
+	$QuestionLabel.text = str(getQuestionCount()) + " questions";
+	
+	
 
 func getCat():
 	return catInd;

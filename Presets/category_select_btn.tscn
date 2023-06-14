@@ -11,20 +11,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_luoko")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 9.0
-offset_right = 359.0
-offset_bottom = 41.0
-theme_override_fonts/font = ExtResource("2_tavxm")
-theme_override_font_sizes/font_size = 30
-text = "Title here"
-horizontal_alignment = 1
-vertical_alignment = 1
-text_overrun_behavior = 3
-
-[node name="Label2" type="Label" parent="."]
+[node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 39.0
@@ -35,6 +22,23 @@ theme_override_font_sizes/font_size = 30
 text = "30 questions"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 361.0
+offset_bottom = 37.0
+
+[node name="Title" type="Label" parent="ScrollContainer"]
+custom_minimum_size = Vector2(354, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tavxm")
+theme_override_font_sizes/font_size = 30
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
