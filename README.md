@@ -16,9 +16,9 @@ You can down the game executable from our [releases](https://github.com/PikeNote
 [GoDot](https://github.com/godotengine/godot) - Game Engine powering the game. The main scripting language is GDScript used throughout the code.
 
 ## Credits
-Lead Developer - [Kevin Huang](https://gituhb.com/PikeNote)
-Artist - [Ashely Molina](https://www.linkedin.com/in/ash-molina/)
-Default Statistics Questions - [Janet Paida](https://www.linkedin.com/in/janet-paida-620591209/)
+Lead Developer - [Kevin Huang](https://gituhb.com/PikeNote)  
+Artist - [Ashely Molina](https://www.linkedin.com/in/ash-molina/)  
+Default Statistics Questions - [Janet Paida](https://www.linkedin.com/in/janet-paida-620591209/)  
 
 ## Contributing
 
